@@ -14,10 +14,15 @@ export class BasicAuthInterceptor implements HttpInterceptor {
 
   constructor(private authService: AuthService) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const headers = new HttpHeaders({
-      'Authorization': this.authService.getAuthHeaders()
-    });
 
+    const header = this.authService.getAuthHeaders();
+    if (!header) {
+      return next.handle(request);
+    }
+
+    const headers = new HttpHeaders({
+      Authorization: header
+    });
     request = request.clone({
       headers
     });

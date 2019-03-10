@@ -5,12 +5,14 @@ import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
 import { FormsModule } from '@angular/forms';
 import { BasicAuthInterceptor } from './auth/basic-auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AuthComponent],
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

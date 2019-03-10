@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   test(): Observable<any> {
-    const url = `${this.serverSource.value}/app/rest/server`;
+    const url = `${this.serverSource.value}/app/rest/latest/server`;
     return this.http.get(url);
   }
 
