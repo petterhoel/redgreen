@@ -1,8 +1,9 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription, BehaviorSubject } from 'rxjs';
-import { BuildTypes } from './model/build-types';
 import { AuthService } from '../core/auth/auth.service';
+import { BuildType } from './model/build-type';
+import { BuildTypes } from './model/build-types';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class BuildDataService implements OnDestroy {
   private apiurl = '';
   private urlSubscription: Subscription;
 
-  private buildInfoSource = new BehaviorSubject<BuildTypes>(null);
+  private buildInfoSource = new BehaviorSubject<BuildType[]>([]);
 
   constructor(
     private http: HttpClient,
@@ -44,11 +45,11 @@ export class BuildDataService implements OnDestroy {
   fetchLatestBuilds(): void {
     const url = `${this.apiurl}/${this.prefixUrl}buildTypes?${this.query}`;
     this.http.get<BuildTypes>(url).toPromise()
-      .then(response => this.buildInfoSource.next(response));
+      .then(response => this.buildInfoSource.next(response.buildType));
   }
 
 
-  getLatestBuilds(): Observable<BuildTypes> {
+  getLatestBuilds(): Observable<BuildType[]> {
     return this.buildInfoSource.asObservable();
    }
 }

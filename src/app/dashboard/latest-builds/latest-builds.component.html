@@ -1,3 +1,2 @@
-<h1>Hei</h1>
-
-<div>{{builds | json}}</div>
+<a [routerLink]="['/server']" routerLinkActive="router-link-active" >server</a>
+<app-build-info [build]="build" *ngFor="let build of builds"></app-build-info>
