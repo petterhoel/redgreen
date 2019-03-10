@@ -35,17 +35,18 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   login(): void {
-    console.log(this.server, this.username, this.password);
     this.authService.login(this.username, this.password);
   }
 
   test(): void {
     this.testerror = false;
     this.authService.test().subscribe(
-      response => console.log(response),
+      response => {
+        console.log(response);
+      },
       error => {
         this.testerror = true;
-        console.error(error);
+        console.log(error);
       }
     );
   }
