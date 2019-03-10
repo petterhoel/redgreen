@@ -1,3 +1,6 @@
 <div [ngClass]="build.builds.build[0].status | lowercase" class="wrapper">
-  {{ build.name }}
+  {{ build.id }} : {{ build.name }}
+  {{build.builds.build[0].branchName}}
+  {{build.builds.build[0].lastChanges?.change[0].username}}
+  {{build.builds.build[0].lastChanges?.change[0].comment}}
 </div>
