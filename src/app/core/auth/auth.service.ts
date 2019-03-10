@@ -60,7 +60,7 @@ export class AuthService {
     localStorage.setItem(this.localStoarageUserKey, username);
   }
 
-  login(username: string, password: string): void {
+  updateCredentials(username: string, password: string): void {
     this.updateUser(username);
     this.updateBasicAuthHeader(username, password);
   }

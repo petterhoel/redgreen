@@ -1,20 +1,19 @@
 <h1>Server information</h1>
 
 <div>
-  <label for="server">TeamCity server  </label>
-  <input name="server" [(ngModel)]="server" type="text" (blur)="updateServer()">
+  <label for="server">TeamCity server </label>
+  <input name="server" [(ngModel)]="server" type="text" (ngModelChange)="updateServer()">
 </div>
 
 <div>
   <label for="username">Username </label>
-  <input type="text" [(ngModel)]="username" name="username" placeholder="username">
+  <input type="text" [(ngModel)]="username" (ngModelChange)="updateCredentials()" name="username" placeholder="username">
 </div>
 
 <div>
   <label for="password">Password </label>
-  <input type="password" [(ngModel)]="password" placeholder="password">
+  <input type="password" [(ngModel)]="password" (ngModelChange)="updateCredentials()" placeholder="password">
 </div>
 
-<button (click)="login()">Sign in</button>
 <button (click)="test()">Test connection</button>
 <div>Server-error: {{testerror}}</div>

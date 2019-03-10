@@ -34,8 +34,8 @@ export class AuthComponent implements OnInit, OnDestroy {
     }
   }
 
-  login(): void {
-    this.authService.login(this.username, this.password);
+  updateCredentials(): void {
+    this.authService.updateCredentials(this.username, this.password);
   }
 
   test(): void {
