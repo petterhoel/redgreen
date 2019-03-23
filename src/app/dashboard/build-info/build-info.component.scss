@@ -1,7 +1,7 @@
 @import './src/fonts.scss';
 
 .wrapper {
-  padding: 5px;
+  padding: 10px;
   background-color: rgba($color: white, $alpha: .6);
   border-radius: 3px;
 }
@@ -15,17 +15,32 @@
 }
 
 header {
-  font-weight: bold;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.space-content {
   display: flex;
   justify-content: space-between;
+  align-items: end;
 }
 
 .commit {
   font-family: $monospace;
   word-wrap: anywhere;
   font-size: 12px;
+}
+
+.body > div {
+  margin-bottom: 2px;
+}
+
+.body > div:last-child {
+  margin-bottom: 0;
+}
+
+.quote {
+  margin: 6px 0!important;
 }
 
 :host {

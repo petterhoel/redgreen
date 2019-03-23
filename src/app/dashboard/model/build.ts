@@ -1,8 +1,8 @@
 import { LastChanges } from "./last-changes";
 export class Build {
-  number: string = 'N/A';
-  status: string  = 'N/A';
-  statusText: string = 'N/A' ;
+  number: string = '';
+  status: string  = '';
+  statusText: string = '' ;
   lastChanges: LastChanges = new LastChanges();
-  branchName: string = 'N/A';
+  branchName: string = '';
 }

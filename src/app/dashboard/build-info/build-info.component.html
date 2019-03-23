@@ -1,7 +1,7 @@
 <div
   [ngClass]="build.status | lowercase"
   class="wrapper">
-  <header (click)="toggleExpander()">
+  <header (click)="toggleExpander()" class="space-content">
     <span>
       {{ build.id }}
     </span>
@@ -9,19 +9,25 @@
       {{ build.number }}
     </span>
   </header>
-  <div *ngIf="open">
-    <div>
-      {{build.branchName}}
-    </div>
-    <div>
-      {{build.username}}
-      {{build.date}}
-    </div>
-    <div>
+  <div *ngIf="open" class="body">
+    <div class="quote">
       {{build.comment}}
     </div>
-    <div class="commit">
-      {{build.commit}}
+    <div class="space-content">
+      <span>
+        {{build.username}}
+      </span>
+      <span>
+        {{build.date ? (build.date | amTimeAgo) : ''}}
+      </span>
+    </div>
+    <div class="space-content">
+      <span>
+        {{build.branchName | branch}}
+      </span>
+      <span class="commit">
+        {{build.commit}}
+      </span>
     </div>
   </div>
 </div>
