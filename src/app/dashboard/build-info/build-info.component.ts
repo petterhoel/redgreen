@@ -11,7 +11,6 @@ export class BuildInfoComponent {
   open = false;
 
   toggleExpander(): void {
-    console.log('hei');
-    this.open = !open;
+    this.open = !this.open;
   }
 }

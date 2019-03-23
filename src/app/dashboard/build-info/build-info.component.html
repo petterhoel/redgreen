@@ -1,15 +1,13 @@
 <div
-  (click)="toggleExpander()"
   [ngClass]="build.status | lowercase"
   class="wrapper">
-  <div>
-    {{ build.id }} : {{ build.name }} {{open}}
+  <div (click)="toggleExpander()">
+    {{ build.id }} : {{ build.name }}
   </div>
-  <div>
+  <div *ngIf="open">
     {{build.branchName}}
   </div>
   <div *ngIf="open">
-    Hei
     {{build.username}}
     {{build.comment}}
   </div>
