@@ -1,16 +1,10 @@
 .builds {
-  margin: 20px;
   display: grid;
-  grid-template-columns: repeat(autofit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 20px;
+  margin: 20px;
 }
 
-
-.album {
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  grid-gap: 10px;
-  align-items: center;
+app-build-info {
+  width: 100%;
 }

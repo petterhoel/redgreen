@@ -74,7 +74,7 @@ export class BuildDataService implements OnDestroy {
       number,
       status,
       statusText,
-      branchName: branchName ? branchName : 'N/A',
+      branchName: branchName ? branchName : 'this is not the branch name you are looking for',
       username,
       date,
       comment,

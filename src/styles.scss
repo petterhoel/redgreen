@@ -1,15 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
-
+@import './fonts.scss';
+$app-white: #fcfcfc;
 
 body {
   margin: 0;
   background-color: #1f2534;
-  font-family: 'Work Sans', sans-serif;
+  font-family: $sans-serif;
   letter-spacing: 0.002em;
-  color: #fcfcfc;
+  color: $app-white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif
 }
 
 a {
   color: #00a5dd;
- }
+}
+pre {
+  font-family: $monospace;
+}
+
+input {
+  background: transparent;
+  border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+  color: $app-white;
+  border-bottom: 1px solid #81848d;
+  padding: 5px;
+}
+
+input:focus {
+  border-bottom: 1px solid $app-white;
+}
+
+button {
+  background-color: #feb82f;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+}

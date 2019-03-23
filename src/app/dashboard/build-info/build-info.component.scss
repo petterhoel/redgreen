@@ -1,7 +1,9 @@
+@import './src/fonts.scss';
+
 .wrapper {
-  padding: 3px;
-  max-width: 400px;
-  background-color: rgba($color: white, $alpha: .6)
+  padding: 5px;
+  background-color: rgba($color: white, $alpha: .6);
+  border-radius: 3px;
 }
 
 .failure {
@@ -10,6 +12,20 @@
 
 .success {
   background-color: #82f2ce;
+}
+
+header {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.commit {
+  font-family: $monospace;
+  word-wrap: anywhere;
+  font-size: 12px;
 }
 
 :host {
