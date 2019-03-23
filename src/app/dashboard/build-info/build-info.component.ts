@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { BuildType } from '../model/build-type';
+import { Component, Input } from '@angular/core';
+import { BuildInfo } from '../model/build-info';
 
 @Component({
   selector: 'app-build-info',
@@ -7,5 +7,10 @@ import { BuildType } from '../model/build-type';
   styleUrls: ['./build-info.component.scss']
 })
 export class BuildInfoComponent {
-  @Input() build: BuildType;
+  @Input() build: BuildInfo;
+  open = false;
+
+  toggleExpander(): void {
+    this.open = !this.open;
+  }
 }

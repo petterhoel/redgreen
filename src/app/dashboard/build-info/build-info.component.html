@@ -1,6 +1,33 @@
-<div [ngClass]="build.builds.build[0].status | lowercase" class="wrapper">
-  {{ build.id }} : {{ build.name }}
-  {{build.builds.build[0].branchName}}
-  {{build.builds.build[0].lastChanges?.change[0].username}}
-  {{build.builds.build[0].lastChanges?.change[0].comment}}
+<div
+  [ngClass]="build.status | lowercase"
+  class="wrapper">
+  <header (click)="toggleExpander()" class="space-content">
+    <span>
+      {{ build.id }}
+    </span>
+    <span>
+      {{ build.number }}
+    </span>
+  </header>
+  <div *ngIf="open" class="body">
+    <div class="quote">
+      {{build.comment}}
+    </div>
+    <div class="space-content">
+      <span>
+        {{build.username}}
+      </span>
+      <span>
+        {{build.date ? (build.date | amTimeAgo) : ''}}
+      </span>
+    </div>
+    <div class="space-content">
+      <span>
+        {{build.branchName | branch}}
+      </span>
+      <span class="commit">
+        {{build.commit}}
+      </span>
+    </div>
+  </div>
 </div>
