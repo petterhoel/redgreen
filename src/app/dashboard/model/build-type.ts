@@ -1,6 +1,6 @@
 import { Builds } from './builds';
 export class BuildType {
-  id: string;
-  name: string;
-  builds: Builds;
+  id: string = 'N/A';
+  name: string = 'N/A';
+  builds: Builds = new Builds();
 }

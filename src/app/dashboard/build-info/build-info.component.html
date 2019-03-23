@@ -1,16 +1,16 @@
 <div
   (click)="toggleExpander()"
-  [ngClass]="build.builds.build[0]?.status | lowercase"
+  [ngClass]="build.status | lowercase"
   class="wrapper">
   <div>
     {{ build.id }} : {{ build.name }} {{open}}
   </div>
   <div>
-    {{build.builds.build[0]?.branchName}}
+    {{build.branchName}}
   </div>
   <div *ngIf="open">
     Hei
-    {{build.builds.build[0]?.lastChanges?.change[0].username}}
-    {{build.builds.build[0]?.lastChanges?.change[0].comment}}
+    {{build.username}}
+    {{build.comment}}
   </div>
 </div>

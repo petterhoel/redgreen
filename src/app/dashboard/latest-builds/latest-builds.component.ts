@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BuildDataService } from '../build-data.service';
 import { Subscription } from 'rxjs';
 import { BuildType } from '../model/build-type';
+import { BuildInfo } from '../model/build-info';
 
 @Component({
   selector: 'app-latest-builds',
@@ -9,7 +10,7 @@ import { BuildType } from '../model/build-type';
   styleUrls: ['./latest-builds.component.scss']
 })
 export class LatestBuildsComponent implements OnInit {
-  builds: BuildType[] = [];
+  builds: BuildInfo[] = [];
   buildSubscription: Subscription;
   constructor(private buildData: BuildDataService) { }
 
