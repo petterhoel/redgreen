@@ -1,2 +1,6 @@
 <a [routerLink]="['/server']" routerLinkActive="router-link-active" >server</a>
-<app-build-info [build]="build" *ngFor="let build of builds"></app-build-info>
+
+<div class="builds">
+
+  <app-build-info [build]="build" *ngFor="let build of builds"></app-build-info>
+</div>

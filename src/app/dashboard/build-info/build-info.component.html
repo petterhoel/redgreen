@@ -1,6 +1,16 @@
-<div [ngClass]="build.builds.build[0].status | lowercase" class="wrapper">
-  {{ build.id }} : {{ build.name }}
-  {{build.builds.build[0].branchName}}
-  {{build.builds.build[0].lastChanges?.change[0].username}}
-  {{build.builds.build[0].lastChanges?.change[0].comment}}
+<div
+  (click)="toggleExpander()"
+  [ngClass]="build.builds.build[0]?.status | lowercase"
+  class="wrapper">
+  <div>
+    {{ build.id }} : {{ build.name }} {{open}}
+  </div>
+  <div>
+    {{build.builds.build[0]?.branchName}}
+  </div>
+  <div *ngIf="open">
+    Hei
+    {{build.builds.build[0]?.lastChanges?.change[0].username}}
+    {{build.builds.build[0]?.lastChanges?.change[0].comment}}
+  </div>
 </div>

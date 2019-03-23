@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BuildType } from '../model/build-type';
 
 @Component({
@@ -8,4 +8,10 @@ import { BuildType } from '../model/build-type';
 })
 export class BuildInfoComponent {
   @Input() build: BuildType;
+  open = false;
+
+  toggleExpander(): void {
+    console.log('hei');
+    this.open = !open;
+  }
 }
