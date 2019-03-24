@@ -1,6 +1,9 @@
 # TeamCityBuildScreen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+This is a work in progress, not production ready. 
+
+## Angular CLI
+You'll need angular cli installed globally or use npx. 
 
 ## Development server
 
@@ -18,16 +21,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-
-## Running in docker
+## Running with docker
 1. Build with `docker build .`
 1. Note image hash, start with `docker run -d -p 8008:80 *hash* `
 1. Find running container hash with `docker container ls`
