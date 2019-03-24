@@ -1,6 +1,5 @@
 # TeamCity buildscreen
-
-This is a work in progress, *not production ready*.
+This is a work in progress, it is *not production ready*. The aim is to provide a clean visual interface for builds statuses for builds on TeamCity servers along with build meta information. 
 
 ## Notes on security
 Beware, there are some security footguns ahead. TeamCity uses Basic Authentication. For now this application will store username and passord in session storage as an encoded string and send it along with every request. Here are some reccomendations though:
@@ -8,6 +7,13 @@ Beware, there are some security footguns ahead. TeamCity uses Basic Authenticati
 - Serve the buildscreen over https only.
 - If your build data contains or is considered sensitive information, don't have a build screen.
 
+## Features
+- [x] List latest completed builds with meta infomation
+- [] Proper navigation
+- [] UX improvements
+- [] Filter build list (sticky by localstorage)
+- [] Multiple server support (remember and easy to swap)
+- [] PWAify
 
 ## CORS (I can't log in or get data?)
 Your TeamCity server must accept requests from where ever you host the buildscreen. Please check [their docs](https://confluence.jetbrains.com/display/TCD18/REST+API#RESTAPI-CORSSupport).
@@ -15,22 +21,19 @@ Your TeamCity server must accept requests from where ever you host the buildscre
 ## Hosted version [![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/buildscreen/deploys)
 Yes we are live on [netlify](https://buildscreen.netlify.com/)
 
+## Development
 
-## Angular CLI
+### Angular CLI
 You'll need angular cli installed globally or use npx. The following assumes running the angular cli.
 
-## Development server
-
+### Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
+### Code scaffolding
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/<ProjectName>` directory. Use the `--prod` flag for a production build.
 
 ## Running with docker
 1. Build with `docker build .`
