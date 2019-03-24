@@ -9,11 +9,11 @@ Beware, there are some security footguns ahead. TeamCity uses Basic Authenticati
 
 ## Features
 - [x] List latest completed builds with meta infomation
-- [] Proper navigation
-- [] UX improvements
-- [] Filter build list (sticky by localstorage)
-- [] Multiple server support (remember and easy to swap)
-- [] PWAify
+- [ ] Proper navigation
+- [ ] UX improvements
+- [ ] Filter build list (sticky by localstorage)
+- [ ] Multiple server support (remember and easy to swap)
+- [ ] PWAify
 
 ## CORS (I can't log in or get data?)
 Your TeamCity server must accept requests from where ever you host the buildscreen. Please check [their docs](https://confluence.jetbrains.com/display/TCD18/REST+API#RESTAPI-CORSSupport).
