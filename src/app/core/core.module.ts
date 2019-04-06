@@ -7,9 +7,10 @@ import { BasicAuthInterceptor } from './auth/basic-auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ServerInfoComponent } from './server-info/server-info.component';
 
 @NgModule({
-  declarations: [AuthComponent, NavbarComponent],
+  declarations: [AuthComponent, NavbarComponent, ServerInfoComponent],
   imports: [
     CommonModule,
     FormsModule,

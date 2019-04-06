@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './core/auth/auth.component';
 import { LatestBuildsComponent } from './dashboard/latest-builds/latest-builds.component';
+import { AuthGuardService } from './core/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: `dashboard`,
-    component: LatestBuildsComponent
+    component: LatestBuildsComponent,
+    canActivate: [ AuthGuardService ]
   },
   {
     path: ``,
