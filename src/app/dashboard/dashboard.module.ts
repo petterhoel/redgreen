@@ -5,12 +5,17 @@ import { BuildInfoComponent } from './build-info/build-info.component';
 import { RouterModule } from '@angular/router';
 import { MomentModule } from 'ngx-moment';
 import { BranchPipe } from './branch.pipe';
+import { SettingsComponent } from './settings/settings.component';
+import { ToggleComponent } from '../dashboard/toggle/toggle.component';
+
 
 @NgModule({
   declarations: [
     LatestBuildsComponent,
     BuildInfoComponent,
-    BranchPipe
+    BranchPipe,
+    SettingsComponent,
+    ToggleComponent,
   ],
   imports: [
     CommonModule,
