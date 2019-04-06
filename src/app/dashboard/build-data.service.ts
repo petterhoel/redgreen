@@ -57,7 +57,7 @@ export class BuildDataService implements OnDestroy {
     const url = `${this.apiurl}/${this.prefixUrl}buildTypes?${this.query}`;
     this.http.get<BuildTypes>(url).toPromise()
       .then(response => {
-        const infolist = this.mapList(response.buildType);
+        const infolist = this.mapAndSortList(response.buildType);
         this.buildInfoSource.next(infolist);
       });
   }
@@ -66,10 +66,14 @@ export class BuildDataService implements OnDestroy {
     return this.buildInfoSource.asObservable();
   }
 
-  mapList(serverList: BuildType[]): BuildInfo[] {
-    const infolist = serverList.map(item => this.buildTypeToBuildInfo(item));
+  mapAndSortList(serverList: BuildType[]): BuildInfo[] {
+    const infolist = serverList
+      .map(item => this.buildTypeToBuildInfo(item))
+      .sort(this.sort);
     return infolist;
   }
+
+  sort(a: BuildInfo, b: BuildInfo) { return a.id.localeCompare(b.id); }
 
   buildTypeToBuildInfo(deepBuild: BuildType): BuildInfo {
     const build = deepBuild.builds.build.length ? deepBuild.builds.build[0] : new Build();
