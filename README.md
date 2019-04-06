@@ -1,5 +1,5 @@
 # TeamCity buildscreen
-This is a work in progress, it is *not production ready*. The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information.
+This is a work in progress, it is **_not production ready_**. The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information.
 
 ## Notes on security
 Beware, there are some security footguns ahead. TeamCity uses Basic Authentication. For now this application will store username and passord in session storage as an encoded string and send it along with every request. Here are some reccomendations though:
@@ -11,19 +11,22 @@ Beware, there are some security footguns ahead. TeamCity uses Basic Authenticati
 - [x] List latest completed builds with meta infomation.
 - [x] Fits narrow viewports and can sneak into busy info screens.
 
+
+## In the works
+- [...] Filter build list (toggle which builds to display - sticky by localstorage) (in the works)
+
 ## Todo
-- [ ] Filter build list (toggle which builds to display - sticky by localstorage)
 - [ ] PWAify
-    - Cache fonts
-    - Installable
+    - Installable (manifest ios compat etc)
+    - Cache static assets
 
 ## Nice to have
 - [ ] Running builds indicator.
-- [ ] Error tracking (sanity?).
+- [ ] Error tracking (sentry?).
 - [ ] Multiple server support (remember and easy to swap).
 
 ## CORS (I can't log in or get data?)
-Your TeamCity server must accept requests from where ever you host the buildscreen. Please check [their docs](https://confluence.jetbrains.com/display/TCD18/REST+API#RESTAPI-CORSSupport).
+Your TeamCity server must accept requests from where ever you host the buildscreen. Please check [TeamCity docs](https://confluence.jetbrains.com/display/TCD18/REST+API#RESTAPI-CORSSupport) on how to do this.
 
 ## Hosted version [![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/buildscreen/deploys)
 Yes we are live on [netlify](https://buildscreen.netlify.com/)
