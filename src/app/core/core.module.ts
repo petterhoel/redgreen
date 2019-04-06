@@ -6,9 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { BasicAuthInterceptor } from './auth/basic-auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [AuthComponent],
+  declarations: [AuthComponent, NavbarComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -17,6 +18,9 @@ import { RouterModule } from '@angular/router';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
   ],
+  exports: [
+    NavbarComponent
+  ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {    // Ensure that CoreModule is only loaded into AppModule
 

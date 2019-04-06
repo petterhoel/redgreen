@@ -1,0 +1,14 @@
+:host {
+  display: grid;
+  grid-template-areas:
+    "navbar"
+    "content"
+}
+
+app-navbar{
+  grid-area: navbar;
+}
+
+.router-outlet {
+  grid-area: content;
+}
