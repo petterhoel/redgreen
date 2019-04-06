@@ -25,6 +25,12 @@ header {
   align-items: flex-end;
 }
 
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .commit {
   font-family: $monospace;
   word-wrap: anywhere;

@@ -7,11 +7,17 @@ html, body, app-root {
 }
 
 body {
-  margin: 0;
+  margin: 0px 16px;
   background-color: #1f2534;
   font-family: $sans-serif;
   letter-spacing: 0.002em;
   color: $app-white;
+}
+
+@media screen and (max-width: 699px) {
+  body {
+    margin: 0 6px
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -34,9 +40,9 @@ pre {
 input {
   background: transparent;
   border: none;
-    border-bottom-color: currentcolor;
-    border-bottom-style: none;
-    border-bottom-width: medium;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: medium;
   color: $app-white;
   border-bottom: 1px solid #81848d;
   padding: 5px;

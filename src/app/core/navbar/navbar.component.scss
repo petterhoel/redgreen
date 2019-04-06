@@ -2,7 +2,6 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 5px 10px;
 }
 nav > * {
   margin-right: 10px;
@@ -30,6 +29,6 @@ a{
 }
 
 a.router-link-active {
-  color: #00a5dd;;
+  color: #00a5dd;
   font-style: italic;
 }

@@ -7,8 +7,13 @@
 
 app-navbar{
   grid-area: navbar;
+  position: sticky;
+  top: 0px;
+  padding-top: 10px;
+  background-color: #1f2534;
 }
 
 .router-outlet {
   grid-area: content;
+  margin-top: 10px;
 }
