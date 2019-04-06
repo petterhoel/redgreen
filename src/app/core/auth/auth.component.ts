@@ -11,7 +11,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   server = ``;
   serverSubscription: Subscription;
   userSubscription: Subscription;
-  testerror = false;
+  serverConnection = false;
   username = ``;
   password = ``;
   constructor(private authService: AuthService) {}
@@ -39,14 +39,15 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   test(): void {
-    this.testerror = false;
+    this.serverConnection = false;
     this.authService.test().subscribe(
       response => {
+        this.serverConnection = true;
         console.log(response);
       },
       error => {
-        this.testerror = true;
-        console.log(error);
+        this.serverConnection = false;
+        console.error(error);
       }
     );
   }

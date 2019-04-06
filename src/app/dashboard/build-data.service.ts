@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription, BehaviorSubject } from 'rxjs';
+import { Observable, Subscription, BehaviorSubject, interval } from 'rxjs';
 import { AuthService } from '../core/auth/auth.service';
 import { BuildType } from './model/build-type';
 import { BuildTypes } from './model/build-types';
@@ -21,6 +21,8 @@ export class BuildDataService implements OnDestroy {
   private apiurl = '';
   private urlSubscription: Subscription;
   private buildInfoSource = new BehaviorSubject<BuildInfo[]>([]);
+  intervalSubscription: Subscription;
+  interval = 60000;
 
   constructor(
     private http: HttpClient,
@@ -32,14 +34,23 @@ export class BuildDataService implements OnDestroy {
     if (this.urlSubscription) {
       this.urlSubscription.unsubscribe();
     }
+    if (this.intervalSubscription) {
+      this.intervalSubscription.unsubscribe();
+    }
    }
 
   init(): void {
     this.urlSubscription = this.authService.currentServer()
       .subscribe(url => {
         this.apiurl = url;
-        this.fetchLatestBuilds();
+        this.fetchNowAndOnIterval();
       });
+  }
+
+  fetchNowAndOnIterval(): void {
+    this.fetchLatestBuilds();
+    this.intervalSubscription = interval(this.interval)
+      .subscribe(() => this.fetchLatestBuilds());
   }
 
   fetchLatestBuilds(): void {
@@ -50,7 +61,6 @@ export class BuildDataService implements OnDestroy {
         this.buildInfoSource.next(infolist);
       });
   }
-
 
   getLatestBuilds(): Observable<BuildInfo[]> {
     return this.buildInfoSource.asObservable();

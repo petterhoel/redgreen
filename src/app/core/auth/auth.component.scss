@@ -1,0 +1,25 @@
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  min-width: 400px;
+}
+.wrapper > * {
+  margin-bottom: 10px;
+}
+
+.input {
+  display: flex;
+  align-items: stretch;
+}
+
+input {
+  flex-grow: 2;
+}
+
+label {
+  margin-right: 10px;
+}
