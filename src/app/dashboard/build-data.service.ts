@@ -20,6 +20,8 @@ export class BuildDataService implements OnDestroy {
   private readonly query = `${this.locator}&${this.fields}`;
   private apiurl = '';
   private urlSubscription: Subscription;
+  private readonly hiddenBuildKey = 'hiddenBuildsKey';
+  private hiddenBuildIds = new BehaviorSubject<string[]>([]);
   private buildInfoSource = new BehaviorSubject<BuildInfo[]>([]);
   intervalSubscription: Subscription;
   interval = 60000;
@@ -40,6 +42,7 @@ export class BuildDataService implements OnDestroy {
    }
 
   init(): void {
+    this.loadHiddenBuilds();
     this.urlSubscription = this.authService.currentServer()
       .subscribe(url => {
         this.apiurl = url;
@@ -47,13 +50,47 @@ export class BuildDataService implements OnDestroy {
       });
   }
 
-  fetchNowAndOnIterval(): void {
+  loadHiddenBuilds(): void {
+    const buildsToHide = this.getStoredHiddenBuildList();
+    this.hiddenBuildIds.next(buildsToHide);
+  }
+
+  addHiddenBuild(id: string): void {
+    let hidden = this.getStoredHiddenBuildList();
+    if (hidden.includes(id)) {
+      return;
+    }
+    hidden = [id, ...hidden];
+    this.updtateHiddenbuilds(hidden);
+  }
+
+  removeHiddenBuild(id: string): void {
+    let hidden = this.getStoredHiddenBuildList();
+    hidden = hidden.filter(item => item !== id);
+    this.updtateHiddenbuilds(hidden);
+  }
+
+  private updtateHiddenbuilds(builds: string[]) {
+    localStorage.setItem(this.hiddenBuildKey, JSON.stringify(builds));
+    this.hiddenBuildIds.next(builds);
+  }
+
+  private getStoredHiddenBuildList(): string[] {
+    const stringedItems = localStorage.getItem(this.hiddenBuildKey);
+    if (!stringedItems) {
+      return [];
+    }
+    const hiddenBuilds: string[] = JSON.parse(stringedItems);
+    return hiddenBuilds;
+  }
+
+  private fetchNowAndOnIterval(): void {
     this.fetchLatestBuilds();
     this.intervalSubscription = interval(this.interval)
       .subscribe(() => this.fetchLatestBuilds());
   }
 
-  fetchLatestBuilds(): void {
+  private fetchLatestBuilds(): void {
     const url = `${this.apiurl}/${this.prefixUrl}buildTypes?${this.query}`;
     this.http.get<BuildTypes>(url).toPromise()
       .then(response => {
@@ -67,8 +104,10 @@ export class BuildDataService implements OnDestroy {
   }
 
   mapAndSortList(serverList: BuildType[]): BuildInfo[] {
+    const hiddenIdList = this.hiddenBuildIds.value;
     const infolist = serverList
       .map(item => this.buildTypeToBuildInfo(item))
+      .filter(item => !hiddenIdList.includes(item.id))
       .sort(this.sort);
     return infolist;
   }
