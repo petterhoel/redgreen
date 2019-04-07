@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BuildDataService } from '../build-data.service';
 import { Subscription } from 'rxjs';
 import { BuildInfo } from '../model/build-info';
+import { BuildStoreService } from '../build-store.service';
 
 @Component({
   selector: 'app-latest-builds',
@@ -10,27 +10,45 @@ import { BuildInfo } from '../model/build-info';
 })
 export class LatestBuildsComponent implements OnInit, OnDestroy {
   builds: BuildInfo[] = [];
+  filteredBuilds: BuildInfo[] = [];
   buildSubscription: Subscription;
+  filteredBuildSubscription: Subscription;
 
   updated: Date = null;
-  constructor(private buildData: BuildDataService) { }
+  constructor(private buildData: BuildStoreService) { }
 
   ngOnInit() {
-    this.getData();
+    this.getAllBuilds();
+    this.getFilteredBuilds();
   }
 
-  getData(): void {
+  getAllBuilds(): void {
     this.buildSubscription = this.buildData
       .getLatestBuilds()
       .subscribe(builds => {
         if (builds && builds.length) {
-          this.onDataRetrieved(builds);
+          this.onAllBuildsRetrieved(builds);
         }
       });
   }
 
-  onDataRetrieved(builds: BuildInfo[]): void {
+  getFilteredBuilds(): void {
+    this.filteredBuildSubscription = this.buildData
+      .getLatestBuildsFiltered()
+      .subscribe(builds => {
+        if (builds && builds.length) {
+          this.onFilteredRetrieved(builds);
+        }
+      });
+  }
+
+  onAllBuildsRetrieved(builds: BuildInfo[]): void {
     this.builds = builds;
+    this.updated = new Date();
+  }
+
+  onFilteredRetrieved(builds: BuildInfo[]): void {
+    this.filteredBuilds = builds;
     this.updated = new Date();
   }
 
@@ -38,6 +56,8 @@ export class LatestBuildsComponent implements OnInit, OnDestroy {
     if (this.buildSubscription) {
       this.buildSubscription.unsubscribe();
     }
-
+    if (this.filteredBuildSubscription) {
+      this.filteredBuildSubscription.unsubscribe();
+    }
   }
 }

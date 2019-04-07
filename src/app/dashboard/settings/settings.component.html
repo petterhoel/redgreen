@@ -1,6 +1,13 @@
-<h2>Toggle visibility for builds</h2>
-<div class="item">
-  <span>Name of this thing</span>
-  <app-toggle></app-toggle>
-</div>
-
+<section class="info">
+  <h2>Toggle visibility for builds</h2>
+</section>
+<section class="builds">
+  <div *ngFor="let build of buildSettings" class="item">
+    <span>{{build.id}}</span>
+    <input
+      type="checkbox"
+      name="build"
+      [(ngModel)]="build.show"
+      (ngModelChange)="toggleVisibility(build.id)">
+  </div>
+</section>

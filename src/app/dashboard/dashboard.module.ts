@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MomentModule } from 'ngx-moment';
 import { BranchPipe } from './branch.pipe';
 import { SettingsComponent } from './settings/settings.component';
-import { ToggleComponent } from '../dashboard/toggle/toggle.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,12 +15,12 @@ import { ToggleComponent } from '../dashboard/toggle/toggle.component';
     BuildInfoComponent,
     BranchPipe,
     SettingsComponent,
-    ToggleComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     MomentModule,
+    FormsModule,
   ],
   exports: [
     LatestBuildsComponent

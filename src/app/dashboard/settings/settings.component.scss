@@ -1,6 +1,25 @@
+:host {
+  display: grid;
+  grid-template-areas: "info builds"
+}
+
+.info {
+  grid-area: info;
+  max-width: 400px;
+}
+
+.builds {
+  grid-area: builds;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 6px;
+  grid-column-gap: 50px;
+}
+
 .item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 span {
   margin-right: 6px;
