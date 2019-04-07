@@ -3,15 +3,27 @@
   grid-template-areas: "info builds"
 }
 
+@media screen and (max-width: 699px) {
+  :host {
+    grid-template-columns: 1 / -1;
+    grid-template-areas:
+      "info"
+      "builds"
+  }
+}
+
 .info {
   grid-area: info;
   max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .builds {
   grid-area: builds;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 6px;
   grid-column-gap: 50px;
 }
