@@ -10,7 +10,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ServerInfoComponent } from './server-info/server-info.component';
 
 @NgModule({
-  declarations: [AuthComponent, NavbarComponent, ServerInfoComponent],
+  declarations: [
+    AuthComponent,
+    NavbarComponent,
+    ServerInfoComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,7 +24,7 @@ import { ServerInfoComponent } from './server-info/server-info.component';
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
   ]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {    // Ensure that CoreModule is only loaded into AppModule

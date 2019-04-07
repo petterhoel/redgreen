@@ -5,17 +5,22 @@ import { BuildInfoComponent } from './build-info/build-info.component';
 import { RouterModule } from '@angular/router';
 import { MomentModule } from 'ngx-moment';
 import { BranchPipe } from './branch.pipe';
+import { SettingsComponent } from './settings/settings.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     LatestBuildsComponent,
     BuildInfoComponent,
-    BranchPipe
+    BranchPipe,
+    SettingsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     MomentModule,
+    FormsModule,
   ],
   exports: [
     LatestBuildsComponent

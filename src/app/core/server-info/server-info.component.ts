@@ -10,13 +10,13 @@ import { AuthService } from '../auth/auth.service';
 })
 export class ServerInfoComponent implements OnInit {
   server: ServerInfo;
-  constructor(private serverData: ServerDataService, private authService: AuthService) { }
+  constructor(
+    private serverData: ServerDataService,
+    private authService: AuthService) { }
 
   ngOnInit(): void  {
     this.authService.currentServer()
       .subscribe(server => {
-        console.log(server);
-
         this.getServerInfo();
       });
   }

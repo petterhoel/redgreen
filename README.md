@@ -10,10 +10,8 @@ Beware, there are some security footguns ahead. TeamCity uses Basic Authenticati
 ## Features
 - [x] List latest completed builds with meta infomation.
 - [x] Fits narrow viewports and can sneak into busy info screens.
+- [x] Filter which builds to display.
 
-
-## In the works
-- [ ] Filter build list (toggle which builds to display - sticky by localstorage).
 
 ## Todo
 - [ ] Error visualization
