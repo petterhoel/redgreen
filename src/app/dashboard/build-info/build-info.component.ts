@@ -7,7 +7,16 @@ import { BuildInfo } from '../model/build-info';
   styleUrls: ['./build-info.component.scss']
 })
 export class BuildInfoComponent {
-  @Input() build: BuildInfo;
+  private _build: BuildInfo;
+  @Input() set build(info: BuildInfo) {
+    this._build = info;
+    this.open = info.status.toLowerCase() !== 'success';
+  }
+
+  get build(): BuildInfo {
+    return this._build;
+  }
+
   open = false;
 
   toggleExpander(): void {
