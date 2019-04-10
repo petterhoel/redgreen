@@ -35,6 +35,27 @@ header {
   font-family: $monospace;
   word-wrap: anywhere;
   font-size: 12px;
+  cursor: pointer;
+}
+
+.commit:hover {
+  background: rgba(0, 0, 0, .15);
+}
+
+span:hover {
+  position: relative;
+}
+
+span[aria-label]:hover:after {
+   content: attr(aria-label);
+   padding: 4px 8px;
+   position: absolute;
+   border-radius: 5px;
+   left: 10px;
+   top: 120%;
+   white-space: nowrap;
+   z-index: 20;
+   background:white;
 }
 
 .body > div {

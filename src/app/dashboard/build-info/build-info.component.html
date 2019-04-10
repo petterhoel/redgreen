@@ -25,8 +25,12 @@
       <span>
         {{build.branchName | branch}}
       </span>
-      <span class="commit">
-        {{build.commit}}
+      <span
+         class="commit"
+         [attr.aria-label]="'Click to copy commit hash to clipboard: ' + build.commit"
+         ngxClipboard
+         [cbContent]="build.commit">
+        {{build.commit | truncate:6 }}
       </span>
     </div>
   </div>
