@@ -7,6 +7,7 @@ import { MomentModule } from 'ngx-moment';
 import { BranchPipe } from './branch.pipe';
 import { SettingsComponent } from './settings/settings.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     MomentModule,
     FormsModule,
+  SharedModule,
   ],
   exports: [
     LatestBuildsComponent
