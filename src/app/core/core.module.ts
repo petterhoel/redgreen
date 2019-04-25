@@ -8,12 +8,14 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ServerInfoComponent } from './server-info/server-info.component';
+import { InfoBoxComponent } from './info-box/info-box.component';
 
 @NgModule({
   declarations: [
     AuthComponent,
     NavbarComponent,
     ServerInfoComponent,
+    InfoBoxComponent,
   ],
   imports: [
     CommonModule,

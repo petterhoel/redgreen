@@ -16,9 +16,11 @@
       <label for="password">Password </label>
       <input type="password" [(ngModel)]="password" (ngModelChange)="updateCredentials()" placeholder="password">
     </div>
-
     <button (click)="test()">Test connection</button>
     <div>Server connection: {{serverConnection}}</div>
     <app-server-info></app-server-info>
+    <app-info-box>
+      FYI: We use sentry.io for error monitoring. Sensitve data are scrubbed.
+    </app-info-box>
   </div>
 </section>

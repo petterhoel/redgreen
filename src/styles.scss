@@ -2,6 +2,10 @@
 @import './fonts.scss';
 $app-white: #fcfcfc;
 
+* {
+  box-sizing: border-box;
+}
+
 html, body, app-root {
   height: 100%;
 }
@@ -53,8 +57,26 @@ input:focus {
 }
 
 button {
-  background-color: #feb82f;
+  background-color: plum;
   border: none;
+  border-bottom: 3px solid darken(plum, 30%);
   padding: 5px;
   border-radius: 10px;
+}
+
+button:active {
+  background-color: darken(plum, 5%);
+  padding-bottom: 6px;
+  border-bottom: 2px solid darken(plum, 30%);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.dashed li:before {
+  color: #00a5dd;
+  content: '\2014';
+  margin-right: 6px;
 }
