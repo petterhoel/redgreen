@@ -11,6 +11,7 @@ Beware, there are some security footguns ahead. TeamCity uses Basic Authenticati
 - [x] List latest completed builds with meta infomation.
 - [x] Fits narrow viewports and can sneak into busy info screens.
 - [x] Filter which builds to display.
+- [x] Error tracking using [sentry ](https://sentry.io/) with their standard sensitive data scrubbing.
 
 
 ## Todo
@@ -25,7 +26,6 @@ Beware, there are some security footguns ahead. TeamCity uses Basic Authenticati
 
 ## Nice to have
 - [ ] Running builds indicator.
-- [ ] Error tracking (sentry?).
 - [ ] Multiple server support (remember by localhost and easy to swap).
 
 ## Can't log in or get data? (CORS)
