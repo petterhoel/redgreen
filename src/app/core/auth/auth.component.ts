@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Subscription } from 'rxjs';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'app-auth',
@@ -14,24 +15,20 @@ export class AuthComponent implements OnInit, OnDestroy {
   serverConnection = false;
   username = ``;
   password = ``;
+  private subs = new SubSink();
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.serverSubscription = this.authService
+    this.subs.sink = this.authService
       .currentServer()
       .subscribe(server => (this.server = server));
-    this.userSubscription = this.authService
+    this.subs.sink = this.authService
       .currentUser()
       .subscribe(username => (this.username = username));
   }
 
   ngOnDestroy(): void {
-    if (this.serverSubscription) {
-      this.serverSubscription.unsubscribe();
-    }
-    if (this.userSubscription) {
-      this.userSubscription.unsubscribe();
-    }
+    this.subs.unsubscribe();
   }
 
   updateCredentials(): void {
@@ -40,16 +37,22 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   test(): void {
     this.serverConnection = false;
-    this.authService.test().subscribe(
-      response => {
-        this.serverConnection = true;
-        console.log(response);
-      },
-      error => {
-        this.serverConnection = false;
-        console.error(error);
-      }
-    );
+    const ob = this.authService.test()
+
+    ob.then(
+    response => {
+      this.serverConnection = true; console.log(response);
+    },
+    error => this.errorHandler(error));
+  }
+
+  errorHandler(error): void {
+    this.serverConnection = false;
+    switch (error.status) {
+      case 0: console.log(error); break;
+      case 401: alert('There was an error testing the server connection.\n\nInvalid credentials'); break;
+      default: break;
+    }
   }
 
   updateServer(): void {

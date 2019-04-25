@@ -24,8 +24,8 @@ export class ServerDataService implements OnDestroy{
     }
   }
 
-  getServerInfo(): Observable<ServerInfo> {
+  getServerInfo(): Promise<ServerInfo> {
     const url = `${this.serverUrl}/app/rest/latest/server`;
-    return this.http.get<ServerInfo>(url);
+    return this.http.get<ServerInfo>(url).toPromise();
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +36,9 @@ export class AuthService {
     this.serverSource.next(server);
   }
 
-  test(): Observable<any> {
+  test(): Promise<any> {
     const url = `${this.serverSource.value}/app/rest/latest/server`;
-    return this.http.get(url);
+    return this.http.get(url).toPromise();
   }
 
   private btoaCredentials(username: string, password: string): string {
