@@ -1,48 +1,43 @@
-import { Injectable, OnInit, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { BuildType } from './model/build-type';
 import { BuildInfo } from './model/build-info';
 import { Build } from './model/build';
 import { Change } from './model/change';
 import { BuildDataService } from './build-data.service';
-import { Subscription, BehaviorSubject, interval, Observable } from 'rxjs';
+import { BehaviorSubject, interval } from 'rxjs';
+import { SubSink } from 'subsink';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BuildStoreService implements OnDestroy {
 
-  private urlSubscription: Subscription;
   private readonly hiddenBuildKey = 'hiddenBuilds';
-  private hiddenBuildIds = new BehaviorSubject<string[]>([]);
-  private buildInfoSource = new BehaviorSubject<BuildInfo[]>([]);
-  private filteredBuildInfoSource = new BehaviorSubject<BuildInfo[]>([]);
-  intervalSubscription: Subscription;
-  interval = 60000;
+  public hiddenBuildIds$ = new BehaviorSubject<string[]>([]);
+  public builds$ = new BehaviorSubject<BuildInfo[]>([]);
+  public filteredBuilds$ = new BehaviorSubject<BuildInfo[]>([]);
+  private interval = 60000;
+  private subsink = new SubSink();
 
   constructor(private buildDataService: BuildDataService) {
     this.loadHiddenBuilds();
     this.fetchNowAndOnIterval();
   }
 
-  ngOnDestroy(): void {
-    if (this.urlSubscription) {
-      this.urlSubscription.unsubscribe();
-    }
-    if (this.intervalSubscription) {
-      this.intervalSubscription.unsubscribe();
-    }
+  ngOnDestroy() {
+    this.subsink.unsubscribe();
   }
 
   private updtateHiddenbuilds(builds: string[]) {
     localStorage.setItem(this.hiddenBuildKey, JSON.stringify(builds));
-    this.hiddenBuildIds.next(builds);
-    const filteredList = this.buildInfoSource.value.filter(item => !builds.includes(item.id));
-    this.filteredBuildInfoSource.next(filteredList);
+    this.hiddenBuildIds$.next(builds);
+    const filteredList = this.builds$.value.filter(item => !builds.includes(item.id));
+    this.filteredBuilds$.next(filteredList);
   }
 
   private fetchNowAndOnIterval(): void {
     this.fetchLatestBuilds();
-    this.intervalSubscription = interval(this.interval)
+    this.subsink.sink = interval(this.interval)
       .subscribe(() => this.fetchLatestBuilds());
   }
 
@@ -51,10 +46,10 @@ export class BuildStoreService implements OnDestroy {
       .toPromise()
       .then(response => {
         const infolist = this.mapAndSortList(response.buildType);
-        this.buildInfoSource.next(infolist);
-        const hiddenIdList = this.hiddenBuildIds.value;
+        this.builds$.next(infolist);
+        const hiddenIdList = this.hiddenBuildIds$.value;
         const filteredList = infolist.filter(item => !hiddenIdList.includes(item.id));
-        this.filteredBuildInfoSource.next(filteredList);
+        this.filteredBuilds$.next(filteredList);
       });
   }
 
@@ -63,18 +58,6 @@ export class BuildStoreService implements OnDestroy {
       .map(item => this.buildTypeToBuildInfo(item))
       .sort(this.sort);
     return infolist;
-  }
-
-  getLatestBuilds(): Observable<BuildInfo[]> {
-    return this.buildInfoSource.asObservable();
-  }
-
-  getLatestBuildsFiltered(): Observable<BuildInfo[]> {
-    return this.filteredBuildInfoSource.asObservable();
-  }
-
-  getHiddenIds(): Observable<string[]> {
-    return this.hiddenBuildIds.asObservable();
   }
 
   private getStoredHiddenBuildList(): string[] {
@@ -88,7 +71,7 @@ export class BuildStoreService implements OnDestroy {
 
   private loadHiddenBuilds(): void {
     const buildsToHide = this.getStoredHiddenBuildList();
-    this.hiddenBuildIds.next(buildsToHide);
+    this.hiddenBuildIds$.next(buildsToHide);
   }
 
   toggleBuildVisibility(id: string): void {

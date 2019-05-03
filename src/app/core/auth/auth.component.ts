@@ -1,35 +1,25 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from './auth.service';
-import { Subscription } from 'rxjs';
-import { SubSink } from 'subsink';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
-export class AuthComponent implements OnInit, OnDestroy {
+export class AuthComponent {
   server = ``;
-  serverSubscription: Subscription;
-  userSubscription: Subscription;
+  server$ = this.authService
+    .server$
+    .pipe(tap(value => this.server = value));
+  user$ = this.authService
+    .user$
+    .pipe(tap(username => this.username = username));
+
   serverConnection = false;
   username = ``;
   password = ``;
-  private subs = new SubSink();
   constructor(private authService: AuthService) {}
-
-  ngOnInit(): void {
-    this.subs.sink = this.authService
-      .currentServer()
-      .subscribe(server => (this.server = server));
-    this.subs.sink = this.authService
-      .currentUser()
-      .subscribe(username => (this.username = username));
-  }
-
-  ngOnDestroy(): void {
-    this.subs.unsubscribe();
-  }
 
   updateCredentials(): void {
     this.authService.updateCredentials(this.username, this.password);
@@ -37,13 +27,11 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   test(): void {
     this.serverConnection = false;
-    const ob = this.authService.test()
-
-    ob.then(
-    response => {
-      this.serverConnection = true; console.log(response);
-    },
-    error => this.errorHandler(error));
+    this.authService.test()
+      .then(
+        () => this.serverConnection = true,
+        error => this.errorHandler(error)
+      );
   }
 
   errorHandler(error): void {

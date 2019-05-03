@@ -1,12 +1,12 @@
 <section class="aligner">
   <div class="wrapper">
 
-    <div class="input">
+    <div class="input" *ngIf="server$ | async">
       <label for="server">TeamCity server </label>
       <input name="server" [(ngModel)]="server" type="text" (ngModelChange)="updateServer()">
     </div>
 
-    <div class="input">
+    <div class="input" *ngIf="user$ | async">
       <label for="username">Username </label>
       <input type="text" [(ngModel)]="username" (ngModelChange)="updateCredentials()" name="username"
       placeholder="username">

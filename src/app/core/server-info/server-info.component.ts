@@ -1,35 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ServerDataService } from './server-data.service';
-import { ServerInfo } from 'src/app/dashboard/model/server-info';
-import { AuthService } from '../auth/auth.service';
-import { isThenable } from '@sentry/utils';
-import { validateConfig } from '@angular/router/src/config';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-server-info',
   templateUrl: './server-info.component.html',
   styleUrls: ['./server-info.component.scss']
 })
-export class ServerInfoComponent implements OnInit {
-  server: ServerInfo;
+export class ServerInfoComponent {
+  server$ = this.serverData.getServerInfo().pipe(
+    catchError(error => this.handleError)
+  );
   constructor(
-    private serverData: ServerDataService,
-    private authService: AuthService) { }
+    private serverData: ServerDataService) { }
 
-  ngOnInit(): void  {
-    this.authService.currentServer()
-      .subscribe(server => {
-        this.getServerInfo();
-      });
-  }
-
-  getServerInfo(): void {
-    this.serverData.getServerInfo()
-      .then(info => this.server = info)
-      .catch(error => this.handelError(error));
-  }
-
-  handelError(error): void {
+  handleError(error): void {
     switch (error.status) {
       case 0: break;
       case 401: alert('There was an error getting server info.\n\nInvalid credentials'); break;

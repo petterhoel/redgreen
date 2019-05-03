@@ -1,4 +1,4 @@
-<ul class="dashed">
+<ul class="dashed" *ngIf="server$ | async as server">
   <li>
     Version: {{ server?.version }}
   </li>
