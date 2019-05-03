@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private serverSource = new BehaviorSubject<string>('https://');
-  private userSource = new BehaviorSubject<string>('');
+  public server$ = new BehaviorSubject<string>('https://');
+  public user$ = new BehaviorSubject<string>('');
   private readonly localStoarageServerKey = 'teamcity-server';
   private readonly localStoarageUserKey = 'username';
   private readonly sessionStorageBasicHeaderKey = 'basic-header';
@@ -23,21 +23,15 @@ export class AuthService {
     }
    }
 
-  currentServer(): Observable<string> {
-    return this.serverSource.asObservable();
-  }
-
-  currentUser(): Observable<string> {
-    return this.userSource.asObservable();
-  }
-
   updateServer(server: string): void {
+    console.log(server);
+
     localStorage.setItem(this.localStoarageServerKey, server);
-    this.serverSource.next(server);
+    this.server$.next(server);
   }
 
   test(): Promise<any> {
-    const url = `${this.serverSource.value}/app/rest/latest/server`;
+    const url = `${this.server$.value}/app/rest/latest/server`;
     return this.http.get(url).toPromise();
   }
 
@@ -56,7 +50,7 @@ export class AuthService {
   }
 
   private updateUser(username: string): void {
-    this.userSource.next(username);
+    this.user$.next(username);
     localStorage.setItem(this.localStoarageUserKey, username);
   }
 

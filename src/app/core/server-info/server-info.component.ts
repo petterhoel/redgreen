@@ -2,26 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { ServerDataService } from './server-data.service';
 import { ServerInfo } from 'src/app/dashboard/model/server-info';
 import { AuthService } from '../auth/auth.service';
-import { isThenable } from '@sentry/utils';
-import { validateConfig } from '@angular/router/src/config';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-server-info',
   templateUrl: './server-info.component.html',
   styleUrls: ['./server-info.component.scss']
 })
-export class ServerInfoComponent implements OnInit {
+export class ServerInfoComponent {
   server: ServerInfo;
+  server$ = this.authService
+    .server$
+    .pipe(
+      tap(() => this.getServerInfo()));
   constructor(
     private serverData: ServerDataService,
     private authService: AuthService) { }
-
-  ngOnInit(): void  {
-    this.authService.currentServer()
-      .subscribe(server => {
-        this.getServerInfo();
-      });
-  }
 
   getServerInfo(): void {
     this.serverData.getServerInfo()

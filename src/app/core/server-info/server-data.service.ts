@@ -1,28 +1,23 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ServerInfo } from 'src/app/dashboard/model/server-info';
-import { Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServerDataService implements OnDestroy{
+export class ServerDataService {
   serverUrl = '';
-  serverSubscription: Subscription;
+  server$ = this.authService
+    .server$
+    .pipe(
+      tap(server => this.serverUrl = server));
+
   constructor(
     private authService: AuthService,
     private http: HttpClient) {
-    this.authService.currentServer()
-      .subscribe(server => this.serverUrl = server);
-
     }
-
-  ngOnDestroy(): void {
-    if (!this.serverSubscription) {
-      this.serverSubscription.unsubscribe();
-    }
-  }
 
   getServerInfo(): Promise<ServerInfo> {
     const url = `${this.serverUrl}/app/rest/latest/server`;

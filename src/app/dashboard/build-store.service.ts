@@ -1,36 +1,31 @@
-import { Injectable, OnInit, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { BuildType } from './model/build-type';
 import { BuildInfo } from './model/build-info';
 import { Build } from './model/build';
 import { Change } from './model/change';
 import { BuildDataService } from './build-data.service';
-import { Subscription, BehaviorSubject, interval, Observable } from 'rxjs';
+import { BehaviorSubject, interval, Observable } from 'rxjs';
+import { SubSink } from 'subsink';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BuildStoreService implements OnDestroy {
 
-  private urlSubscription: Subscription;
   private readonly hiddenBuildKey = 'hiddenBuilds';
   private hiddenBuildIds = new BehaviorSubject<string[]>([]);
   private buildInfoSource = new BehaviorSubject<BuildInfo[]>([]);
   private filteredBuildInfoSource = new BehaviorSubject<BuildInfo[]>([]);
-  intervalSubscription: Subscription;
-  interval = 60000;
+  private interval = 60000;
+  private subsink = new SubSink();
 
   constructor(private buildDataService: BuildDataService) {
     this.loadHiddenBuilds();
     this.fetchNowAndOnIterval();
   }
 
-  ngOnDestroy(): void {
-    if (this.urlSubscription) {
-      this.urlSubscription.unsubscribe();
-    }
-    if (this.intervalSubscription) {
-      this.intervalSubscription.unsubscribe();
-    }
+  ngOnDestroy() {
+    this.subsink.unsubscribe();
   }
 
   private updtateHiddenbuilds(builds: string[]) {
@@ -42,7 +37,7 @@ export class BuildStoreService implements OnDestroy {
 
   private fetchNowAndOnIterval(): void {
     this.fetchLatestBuilds();
-    this.intervalSubscription = interval(this.interval)
+    this.subsink.sink = interval(this.interval)
       .subscribe(() => this.fetchLatestBuilds());
   }
 
