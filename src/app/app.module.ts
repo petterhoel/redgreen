@@ -1,27 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injectable, ErrorHandler } from '@angular/core';
-
+import { NgModule, ErrorHandler, APP_INITIALIZER } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
-import * as Sentry from '@sentry/browser';
-import { environment } from 'src/environments/environment';
-
-if (environment.production) {
-  const dsn = `https://ec58c48d80c74996a9d183287dab71e7@sentry.io/1433999`;
-  Sentry.init({ dsn });
-}
-
-@Injectable()
-export class SentryErrorHandler implements ErrorHandler {
-  constructor() {}
-  handleError(error) {
-    const eventId = Sentry.captureException(error.originalError || error);
-    // Sentry.showReportDialog({ eventId });
-  }
-}
+import { load } from 'src/config-loader';
+import { ConfigService } from './config.service';
+import { BuildScreenErrorHandler } from './BuildScreenErrorHandler';
 
 @NgModule({
   declarations: [
@@ -34,7 +20,21 @@ export class SentryErrorHandler implements ErrorHandler {
     CoreModule,
     DashboardModule
   ],
-  providers: [{ provide: ErrorHandler, useClass: environment.production ? SentryErrorHandler : ErrorHandler }],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: load,
+      deps: [
+        HttpClient,
+        ConfigService
+      ],
+      multi: true
+    },
+    {
+      provide: ErrorHandler,
+      useClass: BuildScreenErrorHandler
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

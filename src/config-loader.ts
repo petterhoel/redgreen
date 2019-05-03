@@ -1,0 +1,35 @@
+import { HttpClient } from '@angular/common/http';
+import { ConfigService } from './app/config.service';
+import * as Sentry from '@sentry/browser';
+
+export function load(http: HttpClient, configService: ConfigService): (() => Promise<string>) {
+  return (): Promise<string> => {
+    return new Promise<string>(async (resolve: (a: string) => void, reject: (a: string) => void): Promise<void> => {
+      try {
+        const configFromFile = await http.get<IConfig>('./config.json').toPromise();
+        configService.config = configFromFile;
+        if (configFromFile.sentry.use) {
+          const dsn = configFromFile.sentry.dsn;
+          Sentry.init({ dsn });
+        }
+        resolve('Config read success');
+      } catch (error) {
+        reject('Config read failed');
+      }
+    });
+  };
+}
+
+export interface IConfig {
+  sentry: ISentryConfig;
+  version: IVersionConfig;
+}
+
+export interface ISentryConfig {
+  dsn: string;
+  use: boolean;
+}
+
+export interface IVersionConfig {
+  commitRef: string;
+}
