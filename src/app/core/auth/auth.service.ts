@@ -24,8 +24,6 @@ export class AuthService {
    }
 
   updateServer(server: string): void {
-    console.log(server);
-
     localStorage.setItem(this.localStoarageServerKey, server);
     this.server$.next(server);
   }
