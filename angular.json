@@ -26,7 +26,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/mock-api",
-              "src/_redirects"
+              "src/_redirects",
+              "src/config.json"
             ],
             "styles": [
               "src/styles.scss"
