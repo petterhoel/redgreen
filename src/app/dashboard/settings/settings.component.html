@@ -1,8 +1,8 @@
 <section class="info">
   <h2>Toggle visibility</h2>
 </section>
-<section class="builds">
-  <div *ngFor="let build of buildSettings" class="item">
+<section class="builds" *ngIf="buildsWithVisibility$ | async as builds">
+  <div *ngFor="let build of builds" class="item">
     <label [for]="build.id">{{build.id}}</label>
     <input
       [id]="build.id"
