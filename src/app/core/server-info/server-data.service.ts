@@ -2,22 +2,15 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { ServerInfo } from 'src/app/dashboard/model/server-info';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
-import { tap } from 'rxjs/operators';
 import { SubSink } from 'subsink';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServerDataService implements OnDestroy{
-  serverUrl = '';
-  server$ = this.authService
-    .server$
-    .pipe(
-      tap(server => {
-       console.log('server',server);
-
-        this.serverUrl = server
-      }));
+  serverUrl$ = this.authService.server$;
+  server$ = this.getServerInfo();
   private subsink = new SubSink();
 
   constructor(
@@ -30,8 +23,8 @@ export class ServerDataService implements OnDestroy{
     this.subsink.unsubscribe();
   }
 
-  getServerInfo(): Promise<ServerInfo> {
-    const url = `${this.serverUrl}/app/rest/latest/server`;
-    return this.http.get<ServerInfo>(url).toPromise();
+  getServerInfo(): Observable<ServerInfo> {
+    const url = `${this.serverUrl$.value}/app/rest/latest/server`;
+    return this.http.get<ServerInfo>(url);
   }
 }

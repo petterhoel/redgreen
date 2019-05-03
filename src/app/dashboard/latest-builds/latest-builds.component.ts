@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BuildStoreService } from '../build-store.service';
 import { tap } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-latest-builds',
@@ -10,7 +11,7 @@ import { tap } from 'rxjs/operators';
 export class LatestBuildsComponent {
   builds$ = this.buildData
     .filteredBuilds$
-    .pipe(tap(() => this.updated = new Date()));
-  updated: Date = null;
+    .pipe(tap(() => this.updated$.next(new Date())));
+  updated$ = new BehaviorSubject<Date>(null);
   constructor(private buildData: BuildStoreService) { }
 }
