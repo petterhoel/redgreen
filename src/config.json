@@ -1,7 +1,7 @@
 {
   "sentry": {
     "dsn": "https://ec58c48d80c74996a9d183287dab71e7@sentry.io/1433999",
-    "use": true
+    "use": false
   },
   "version": {
     "commitRef":"not prod"
