@@ -1,10 +1,10 @@
 # TeamCity buildscreen
-This is a work in progress, it is **_not production ready_**. The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines.
+This is a work in progress, it is **_not considered stable_** yet. The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines.
 
-## Notes on security
-Beware, there are some security footguns ahead. TeamCity uses Basic Authentication. For now this application will store username and passord in session storage as an encoded string and send it along with every request. Here are some reccomendations though:
-- Set up a read only user in TeamCity for this application.
-- Serve the buildscreen over https only.
+## First: Notes on security
+Beware, there are some security footguns ahead. TeamCity uses _Basic Authentication_. So this application stores username and passord in session storage as an encoded string and sends it along with every request. Here are some reccomendations though:
+- Set up a read only user in TeamCity for this buildscreen.
+- Serve the buildscreen over https only to provide encryption. As mentioned _Basic Authentication_ requires us to send username and password along with every request as a plaintext base64 encoded string. 
 - If your build data contains or is considered sensitive information, don't have a build screen.
 
 ## Features
@@ -28,6 +28,23 @@ Beware, there are some security footguns ahead. TeamCity uses Basic Authenticati
 - [ ] Running builds indicator.
 - [ ] Multiple server support (remember by localhost and easy to swap).
 
+## What the Config?
+- `sentry.dsn` is a sentry spesific url used to post errors to sentry.io. Defaults to Petter's sentry setup.
+- `sentry.use` change to `false` if you want to stop communicating to sentry (please don't 🙏). Defaults to `true`
+- `version.commitRef` reference to latest git commit. Update `dist/TeamCityBuildScreen/config.json` by running `npm run netlifybuild` or `node buildscript/write-config.js` as part of your CI/CD process. Defaults to `"not prod"`.
+```
+{
+  "sentry": {
+    "dsn": "https://key@sentry.io/number",
+    "use": true
+  },
+  "version": {
+    "commitRef":"git hash/not prod"
+  }
+}
+
+```
+
 ## Can't log in or get data? (CORS)
 Your TeamCity server must accept requests from where ever you host the buildscreen. Please check [TeamCity docs](https://confluence.jetbrains.com/display/TCD18/REST+API#RESTAPI-CORSSupport) on how to do this.
 
@@ -35,6 +52,7 @@ Your TeamCity server must accept requests from where ever you host the buildscre
 Yes we are live on [netlify](https://buildscreen.netlify.com/).
 
 ## Development
+This is a project written in Angular.
 
 ### Angular CLI
 You'll need Angular cli installed globally or you can use npx if you don't like global installs. The following assumes running the Angular cli.
