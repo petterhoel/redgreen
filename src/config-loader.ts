@@ -10,7 +10,8 @@ export function load(http: HttpClient, configService: ConfigService): (() => Pro
         configService.config = configFromFile;
         if (configFromFile.sentry.use) {
           const dsn = configFromFile.sentry.dsn;
-          Sentry.init({ dsn });
+          const release = `buildscreen@${configFromFile.version.commitRef}`;
+          Sentry.init({ dsn, release });
         }
         resolve('Config read success');
       } catch (error) {
