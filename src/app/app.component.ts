@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TeamCityBuildScreen';
+  constructor() {
+    throw new Error('Fail in startup');
+  }
 }
