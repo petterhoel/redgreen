@@ -4,7 +4,7 @@ This is a work in progress, it is **_not considered stable_** yet. The aim is to
 ## First: Notes on security
 Beware, there are some security footguns ahead. TeamCity uses _Basic Authentication_. So this application stores username and passord in session storage as an encoded string and sends it along with every request. Here are some reccomendations though:
 - Set up a read only user in TeamCity for this buildscreen.
-- Serve the buildscreen over https only to provide encryption. As mentioned _Basic Authentication_ requires us to send username and password along with every request as a plaintext base64 encoded string. 
+- Serve the buildscreen over https only to provide encryption. As mentioned _Basic Authentication_ requires us to send username and password along with every request as a plaintext base64 encoded string.
 - If your build data contains or is considered sensitive information, don't have a build screen.
 
 ## Features
@@ -29,9 +29,9 @@ Beware, there are some security footguns ahead. TeamCity uses _Basic Authenticat
 - [ ] Multiple server support (remember by localhost and easy to swap).
 
 ## What the Config?
-- `sentry.dsn` is a sentry spesific url used to post errors to sentry.io. Defaults to Petter's sentry setup.
-- `sentry.use` change to `false` if you want to stop communicating to sentry (please don't 🙏). Defaults to `true`
-- `version.commitRef` reference to latest git commit. Update `dist/TeamCityBuildScreen/config.json` by running `npm run netlifybuild` or `node buildscript/write-config.js` as part of your CI/CD process. Defaults to `"not prod"`.
+- `sentry.dsn`: is a sentry spesific url used to post errors to sentry.io. Defaults to Petter's sentry setup.
+- `sentry.use`:  Defaults to `false` for dev purposes, but is flipped to `true` on production builds. Use `false` if you really don't want to report errors to sentry in production. Please _*do*_ report though 🙏.
+- `version.commitRef`: reference to latest git commit. `npm run netlifybuild` or `node buildscript/write-config.js` will update `version.commitRef` in `dist/TeamCityBuildScreen/config.json` as part of our CI/CD process. Defaults to `"not prod"` for dev purposes.
 ```
 {
   "sentry": {

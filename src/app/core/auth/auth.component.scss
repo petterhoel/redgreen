@@ -1,3 +1,6 @@
+@import './src/colors.scss';
+
+
 .aligner {
   display: flex;
   align-items: center;
@@ -5,7 +8,9 @@
 }
 
 .wrapper {
-  min-width: 400px;
+  width: 400px;
+  max-width: 100%;
+  font-size: large;
 }
 .wrapper > * {
   margin-bottom: 10px;
@@ -13,13 +18,38 @@
 
 .input {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+}
+$subtle: #ffffff2a;
+$subtle2: #ffffff9a;
+input {
+  font-size: 16px;
+  flex-grow: 2;
+  margin: 0 .25rem;
+  min-width: 125px;
+  border: 1px solid $subtle;
+  border-left: 3px solid $subtle;
+  border-radius: 2px;
+  transition: border-color .5s ease-out;
 }
 
-input {
-  flex-grow: 2;
+input:focus {
+  border: 1px solid $subtle2;
+  border-left: 3px solid $subtle2;
+  transition: border-color .5s ease-out;
+  outline: none;
+}
+
+input.ng-invalid.ng-touched {
+  border-left: 3px solid $failure;
+}
+
+input[name="server"].ng-valid,
+input[name="username"].ng-valid,
+input.ng-valid.ng-touched {
+  border-left: 3px solid $success;
 }
 
 label {
-  margin-right: 10px;
+  min-width: 90px;
 }

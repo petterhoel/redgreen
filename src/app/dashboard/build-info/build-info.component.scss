@@ -1,4 +1,6 @@
 @import './src/fonts.scss';
+@import './src/colors.scss';
+
 
 .wrapper {
   padding: 10px;
@@ -7,11 +9,11 @@
 }
 
 .failure {
-  background-color: #ff8099;
+  background-color: $failure;
 }
 
 .success {
-  background-color: #82f2ce;
+  background-color: $success;
 }
 
 header {
