@@ -1,7 +1,5 @@
 #  Assumes we're in a git repository and sentry cli is installed
-export INSTALL_DIR=$(pwd)
-export INSTALL_PATH="${INSTALL_DIR}/sentry-cli"
-export SENTRY_CLI="${INSTALL_PATH}"
+export SENTRY_CLI="/usr/local/bin/sentry-cli"
 curl -sL https://sentry.io/get-cli | bash
 
 export SENTRY_AUTH_TOKEN=$SENTRY_AUTH
