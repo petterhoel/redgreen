@@ -7,7 +7,7 @@ curl -sL https://sentry.io/get-cli | bash
 export SENTRY_AUTH_TOKEN=$SENTRY_AUTH
 export SENTRY_ORG="petterhoel"
 $SENTRY_CLI --version
-VERSION=`${$SENTRY_CLI} releases propose-version`
+VERSION=`${SENTRY_CLI} releases propose-version`
 
 # Create a release
 $SENTRY_CLI releases new -p "buildscreen" "$VERSION"
