@@ -2,7 +2,7 @@
 export INSTALL_DIR=$(pwd)
 export INSTALL_PATH="${INSTALL_DIR}/sentry-cli"
 
-curl -sL https://sentry.io/get-cli
+curl -sL https://sentry.io/get-cli | bash
 
 export SENTRY_AUTH_TOKEN=$SENTRY_AUTH
 export SENTRY_ORG="petterhoel"
