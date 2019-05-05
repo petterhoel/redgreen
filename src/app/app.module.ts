@@ -7,7 +7,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { load } from 'src/config-loader';
 import { ConfigService } from './config.service';
-import { BuildScreenErrorHandler } from './BuildScreenErrorHandler';
+import { BuildScreenErrorHandler } from './build-screen-error-handler';
 
 @NgModule({
   declarations: [
