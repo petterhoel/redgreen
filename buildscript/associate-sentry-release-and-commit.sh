@@ -10,8 +10,8 @@ $SENTRY_CLI --version
 VERSION=`${SENTRY_CLI} releases propose-version`
 
 # Create a release
-$SENTRY_CLI releases new -p "buildscreen" "$VERSION"
+$SENTRY_CLI releases new -p "buildscreen" "$VERSION" --log-level INFO
 
 # Associate commits with the release
-$SENTRY_CLI releases set-commits --auto "$VERSION"
-$SENTRY_CLI releases finalize "$VERSION"
+$SENTRY_CLI releases set-commits --auto "$VERSION" --log-level INFO
+$SENTRY_CLI releases finalize "$VERSION" --log-level INFO
