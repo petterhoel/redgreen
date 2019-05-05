@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "netlifybuild": "ng build --prod && node buildscript/write-config.js && buildscript/associate-sentry-release-and-commit.sh",
+    "netlifybuild": "ng build --prod && node buildscript/write-config.js && sh buildscript/associate-sentry-release-and-commit.sh",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
