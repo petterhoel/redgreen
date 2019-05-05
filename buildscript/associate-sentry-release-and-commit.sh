@@ -1,7 +1,8 @@
 #  Assumes we're in a git repository
 #export SENTRY_AUTH_TOKEN=$SENTRY_AUTH
 #export SENTRY_ORG="petterhoel"
-curl -sL https://sentry.io/get-cli/ | bash
+curl -sL https://sentry.io/get-cli/
+sentry-cli --version
 #VERSION=`sentry-cli releases propose-version`
 
 # Create a release
