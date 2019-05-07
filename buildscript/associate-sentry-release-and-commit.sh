@@ -1,6 +1,6 @@
 #  Assumes we're in a git repository
 echo "git"
-git remote -v | bash
+git remote
 echo "git end"
 rm sentry-cli
 export INSTALL_DIR=$(pwd)
