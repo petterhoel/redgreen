@@ -1,6 +1,11 @@
 #  Assumes we're in a git repository
+
+echo "ls"
+ls -la
+echo "ls end"
+
 echo "git"
-git remote
+git remote -v
 echo "git end"
 rm sentry-cli
 export INSTALL_DIR=$(pwd)
