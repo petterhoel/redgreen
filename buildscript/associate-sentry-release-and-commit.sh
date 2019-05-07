@@ -1,4 +1,5 @@
 #  Assumes we're in a git repository
+git remote -v
 rm sentry-cli
 export INSTALL_DIR=$(pwd)
 export INSTALL_PATH="${INSTALL_DIR}/sentry-cli"
