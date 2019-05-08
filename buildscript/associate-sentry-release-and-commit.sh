@@ -1,14 +1,6 @@
 #  Assumes we're in a git repository
-
-echo "ls"
-ls -la
-echo "ls end"
-
-echo "git log"
-git log
-echo "git log end"
-
 echo "git"
+git remote add origin $REPOSITORY_URL
 git remote -v
 echo "git end"
 rm sentry-cli
