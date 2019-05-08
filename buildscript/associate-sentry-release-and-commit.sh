@@ -4,9 +4,9 @@ echo "ls"
 ls -la
 echo "ls end"
 
-echo "git config"
-echo "$(cat .git/config)"
-echo "git config end"
+echo "git log"
+git log
+echo "git log end"
 
 echo "git"
 git remote -v
