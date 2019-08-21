@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServerDataService implements OnDestroy{
+export class ServerDataService implements OnDestroy {
   serverUrl$ = this.authService.server$;
   server$ = this.getServerInfo();
   private subsink = new SubSink();

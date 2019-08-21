@@ -30,7 +30,7 @@ export class SettingsComponent {
   }
 
 }
-class BuildWithVisibility{
+class BuildWithVisibility {
   id: string = '';
   show: boolean = true;
 }

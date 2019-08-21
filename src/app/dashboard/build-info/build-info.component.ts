@@ -7,14 +7,14 @@ import { BuildInfo } from '../model/build-info';
   styleUrls: ['./build-info.component.scss']
 })
 export class BuildInfoComponent {
-  private _build: BuildInfo;
+  private aBuild: BuildInfo;
   @Input() set build(info: BuildInfo) {
-    this._build = info;
+    this.aBuild = info;
     this.open = info.status.toLowerCase() !== 'success';
   }
 
   get build(): BuildInfo {
-    return this._build;
+    return this.aBuild;
   }
 
   open = false;

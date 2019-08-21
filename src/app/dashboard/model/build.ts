@@ -1,4 +1,4 @@
-import { LastChanges } from "./last-changes";
+import { LastChanges } from './last-changes';
 export class Build {
   number: string = '';
   status: string  = '';

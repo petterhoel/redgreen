@@ -90,6 +90,7 @@ export class BuildStoreService implements OnDestroy {
     const build = deepBuild.builds.build.length ? deepBuild.builds.build[0] : new Build();
     const change = build && build.lastChanges && build.lastChanges.change.length ? build.lastChanges.change[0] : new Change();
     const { id, name } = deepBuild;
+    // tslint:disable-next-line:variable-name
     const { number, status, statusText, branchName } = build;
     const { username, date, comment, version: commit } = change;
 

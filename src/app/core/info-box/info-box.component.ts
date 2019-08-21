@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-info-box',
@@ -6,6 +6,7 @@ import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/
   styleUrls: ['./info-box.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {'class': 'info-box'}
 })
-export class InfoBoxComponent { }
+export class InfoBoxComponent {
+  @HostBinding('class.info-box') beClassy = true;
+}

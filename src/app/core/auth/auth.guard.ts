@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate {
   private readonly sessionStorageBasicHeaderKey = 'basic-header';
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -19,5 +19,4 @@ export class AuthGuard implements CanActivate {
     this.router.navigate(['server']);
     return false;
   }
-
 }
