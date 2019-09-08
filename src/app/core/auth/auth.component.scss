@@ -11,6 +11,8 @@
   width: 400px;
   max-width: 100%;
   font-size: large;
+  display: flex;
+  flex-direction: column;
 }
 .wrapper > * {
   margin-bottom: 10px;
@@ -40,14 +42,18 @@ input:focus {
   outline: none;
 }
 
-input.ng-invalid.ng-touched {
+input.ng-invalid {
   border-left: 3px solid $failure;
 }
 
 input[name="server"].ng-valid,
-input[name="username"].ng-valid,
-input.ng-valid.ng-touched {
+input[name="token"].ng-valid,
+input.ng-valid {
   border-left: 3px solid $success;
+}
+
+input.ng-untouched{
+  border-left: 1px solid $subtle !important;
 }
 
 label {

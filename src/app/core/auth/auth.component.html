@@ -1,5 +1,5 @@
 <section class="aligner">
-  <form class="wrapper" (ngSubmit)="test()">
+  <form #form="ngForm" class="wrapper" (ngSubmit)="test()">
 
     <div class="input">
       <label for="server">Server </label>
@@ -20,7 +20,7 @@
         [(ngModel)]="credentials.token">
     </div>
 
-    <button (click)="test()" type="submit">Log in with token</button>
+    <button (click)="test()" type="submit" [disabled]="form.invalid">Log in with token</button>
     <app-server-info></app-server-info>
     <app-info-box>
       FYI: We use sentry.io for error monitoring. Don't worry, sensitve data are being scrubbed.
