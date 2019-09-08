@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth/auth.component';
 import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
 import { FormsModule } from '@angular/forms';
-import { BasicAuthInterceptor } from './auth/basic-auth.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ServerInfoComponent } from './server-info/server-info.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { InfoBoxComponent } from './info-box/info-box.component';
     RouterModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+
   ],
   exports: [
     NavbarComponent,

@@ -14,7 +14,7 @@
 
 .info {
   grid-area: info;
-  max-width: 400px;
+  max-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 6px;
-  grid-column-gap: 50px;
+  grid-column-gap: 30px;
+}
+
+@media screen and (min-width: 700px){
+  .builds {
+    min-width: 500px;
+  }
 }
 
 .item {

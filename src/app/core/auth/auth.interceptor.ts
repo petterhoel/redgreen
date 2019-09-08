@@ -7,22 +7,23 @@ import {
   HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
+import { CredentialsService } from './credentials.service';
 
 @Injectable()
-export class BasicAuthInterceptor implements HttpInterceptor {
+export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private authService: AuthService) {}
+  constructor(private credentialsService: CredentialsService) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const header = this.authService.getAuthHeaders();
-    if (!header) {
+    const token = this.credentialsService.getAuthToken();
+    if (!token) {
       return next.handle(request);
     }
 
     const headers = new HttpHeaders({
-      Authorization: header
+      Authorization: `Bearer ${token}`
     });
+
     request = request.clone({
       headers
     });

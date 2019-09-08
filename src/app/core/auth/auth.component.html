@@ -1,38 +1,26 @@
 <section class="aligner">
-  <form class="wrapper">
+  <form #form="ngForm" class="wrapper" (ngSubmit)="test()">
 
-    <div class="input" *ngIf="(server$ | async) || true">
+    <div class="input">
       <label for="server">Server </label>
       <input
         type="text"
         name="server"
         required
         [pattern]="pattern"
-        [(ngModel)]="server"
-        (ngModelChange)="updateServer()">
-    </div>
-
-    <div class="input" *ngIf="(user$ | async) || true">
-      <label for="username">Username </label>
-      <input
-        type="text"
-        name="username"
-        required
-        [(ngModel)]="username"
-        (ngModelChange)="updateCredentials()">
+        [(ngModel)]="credentials.server">
     </div>
 
     <div class="input">
-      <label for="password" >Password </label>
+      <label for="c">Token </label>
       <input
         type="password"
-        name="password"
-        required [(ngModel)]="password"
-        (ngModelChange)="updateCredentials()"
-        placeholder="password">
+        name="token"
+        required
+        [(ngModel)]="credentials.token">
     </div>
-    <button (click)="test()">Test connection</button>
-    <div>Server connection: {{serverConnection}}</div>
+    <button (click)="test()" type="submit" [disabled]="form.invalid">Log in with token</button>
+    <button (click)="clearCredentials();form.reset()" type="button" class="reset">Clear credentials</button>
     <app-server-info></app-server-info>
     <app-info-box>
       FYI: We use sentry.io for error monitoring. Don't worry, sensitve data are being scrubbed.
