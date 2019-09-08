@@ -6,7 +6,7 @@ import { ServerCredentials } from './server-credentials';
 })
 export class CredentialsService {
   private readonly LOCAL_STORAGE_KEY: string = 'server-credentials';
-  private readonly emptyCredentials: ServerCredentials = { server: '', token: '' }
+  private readonly emptyCredentials: ServerCredentials = { server: '', token: '' };
 
   setCredentials(credentials: ServerCredentials): void {
     const credParsed = JSON.stringify(credentials);
