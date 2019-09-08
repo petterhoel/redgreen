@@ -3,7 +3,7 @@
 </section>
 <section class="builds" *ngIf="buildsWithVisibility$ | async as builds">
   <div *ngFor="let build of builds" class="item">
-    <label [for]="build.id">{{build.id}}</label>
+    <label [for]="build.id" style="cursor: pointer">{{build.id}}</label>
     <input
       [id]="build.id"
       type="checkbox"

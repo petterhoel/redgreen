@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
-$app-white: #fcfcfc;
+@import './colors.scss';
 
 * {
   box-sizing: border-box;
@@ -76,3 +76,53 @@ ul.dashed li:before {
   content: '\2014';
   margin-right: 6px;
 }
+
+
+@supports(-webkit-appearance: none) {
+  /* 	AKA, only do this if `-webkit-appearance: none` is supported.
+    Which means IE11 and Opera Mini will get the old browser-styled checkbox.
+    Which works just fine. Old browsers can get old looking things. */
+     input[type="checkbox"] {
+      /*  Remove the default styling.
+          `-webkit-appearance` is not an official CSS property
+        & likely never will be. But it's also in 95% of browsers,
+        non-webkit included, yes, as a `-webkit` property.
+        Firefox, Edge, Chrome, Opera all implemented `-webkit-appearance`.
+        Plus it *will* stick around. Browsers can't remove it.
+        So use it like this...                                 */
+      -webkit-appearance: none;
+      /* Style the box. */
+      width: 1.6rem;
+      height: 1.6rem;
+      border: 1px solid $subtle;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:focus {
+      /* Style the box when it's focused. */
+      border: 1px solid teal;
+    }
+     input[type="checkbox"]:checked {
+      /* Prepare for placing the new checkmark. */
+      position: relative;
+      /* Do a bug fix to keep iOS from adding dark background. */
+      background: none;
+    }
+    input[type="checkbox"]:checked::after {
+      /* Place (position) the new checkmark. */
+      position: absolute;
+      top: 0.36rem;
+      left: 0.12rem;
+      /*  Create a checkmark in CSS.
+        Could use an SVG or `content: "✓";` instead.
+        This is a box, turned 45 degs, with a
+        left and bottom border to make the checkmark.
+        Created using an empty pseudo-element.*/
+      content: "";
+      width: 1.0rem;
+      height: 0.3rem;
+      border: 4px solid plum;
+      border-right: none;
+      border-top: none;
+      transform: rotate(-45deg);
+    }
+  }
