@@ -27,6 +27,12 @@ export class AuthService {
     return this.http.get(url).toPromise();
   }
 
+  clearAuthentication(): void {
+    this.credService.clearCredentials();
+    this.loginsSource$.next(this.credService.getCredentials());
+   }
+
+
   setAuth(credentials: ServerCredentials): Promise<any> {
     this.credService.setCredentials(credentials);
     this.loginsSource$.next(credentials);

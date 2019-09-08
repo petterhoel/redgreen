@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { tap } from 'rxjs/operators';
 import { ServerCredentials } from './server-credentials';
 import { SubSink } from 'subsink';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -21,7 +22,7 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   pattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
   private subs = new SubSink();
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.subs.sink = this.credentials$.subscribe();
@@ -35,11 +36,16 @@ export class AuthComponent implements OnInit, OnDestroy {
     this.authService.setAuth(this.credentials);
   }
 
+  clearCredentials(): void {
+    this.authService.clearAuthentication();
+  }
+
+
   test(): void {
     this.authService.setAuth(this.credentials);
     this.authService.isLoggedIn()
       .then(
-        () => { },
+        () => this.router.navigate(['dashboard']),
         error => console.log(error)
       );
   }

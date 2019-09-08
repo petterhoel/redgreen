@@ -19,8 +19,8 @@
         required
         [(ngModel)]="credentials.token">
     </div>
-
     <button (click)="test()" type="submit" [disabled]="form.invalid">Log in with token</button>
+    <button (click)="clearCredentials();form.reset()" type="button" class="reset">Clear credentials</button>
     <app-server-info></app-server-info>
     <app-info-box>
       FYI: We use sentry.io for error monitoring. Don't worry, sensitve data are being scrubbed.

@@ -2,9 +2,9 @@
 This is a work in progress, it is **_not considered stable_** yet. The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines.
 
 ## First: Notes on security
-Beware, there are some security footguns ahead. TeamCity uses _Basic Authentication_. So this application stores username and passord in session storage as an encoded string and sends it along with every request. Here are some reccomendations though:
+This version uses token-based authentication. Supported by Team City versions 2019.1 and newer.
 - Set up a read only user in TeamCity for this buildscreen.
-- Serve the buildscreen over https only to provide encryption. As mentioned _Basic Authentication_ requires us to send username and password along with every request as a plaintext base64 encoded string.
+- Generate token for that user and use to sign into build screen. Token will be stored in browser localstorage.
 - If your build data contains or is considered sensitive information, don't have a build screen.
 
 ## Features
