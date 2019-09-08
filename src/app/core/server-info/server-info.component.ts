@@ -9,7 +9,6 @@ import { catchError } from 'rxjs/operators';
 })
 export class ServerInfoComponent {
   server$ = this.serverData.getServerInfo().pipe(
-    catchError(error => this.handleError)
   );
   constructor(
     private serverData: ServerDataService) { }

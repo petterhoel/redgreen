@@ -15,14 +15,15 @@ export class BuildDataService {
   // tslint:disable-next-line:max-line-length
   private readonly fields = `fields=buildType(id,name,builds($locator(count:1),build(branchName,agent,number,status,statusText,lastChanges(change(id,version,username,date,comment)))))`;
   private readonly query = `${this.locator}&${this.fields}`;
-  private serverUrl$ = this.authService.server$;
+  private logins$ = this.authService.logins$.pipe(tap(cred => this.serverUrl = cred.server));
+  private serverUrl = '';
 
   constructor(
     private http: HttpClient,
     private authService: AuthService) { }
 
   getLatestBuilds(): Observable<BuildTypes> {
-    const url = `${this.serverUrl$.value}/${this.prefixUrl}buildTypes?${this.query}`;
+    const url = `${this.serverUrl}/${this.prefixUrl}buildTypes?${this.query}`;
     return this.http.get<BuildTypes>(url);
   }
 }

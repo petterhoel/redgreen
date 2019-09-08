@@ -4,12 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { SubSink } from 'subsink';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServerDataService implements OnDestroy {
-  serverUrl$ = this.authService.server$;
+  logins$ = this.authService.logins$.pipe(tap(logins => this.serverUrl = logins.server));
+  serverUrl = '';
   server$ = this.getServerInfo();
   private subsink = new SubSink();
 
@@ -24,7 +26,7 @@ export class ServerDataService implements OnDestroy {
   }
 
   getServerInfo(): Observable<ServerInfo> {
-    const url = `${this.serverUrl$.value}/app/rest/latest/server`;
+    const url = `${this.serverUrl}/app/rest/latest/server`;
     return this.http.get<ServerInfo>(url);
   }
 }

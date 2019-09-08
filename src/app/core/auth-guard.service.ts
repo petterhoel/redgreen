@@ -6,15 +6,15 @@ import { AuthService } from './auth/auth.service';
   providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate {
+  constructor(public auth: AuthService, public router: Router) { }
 
-  constructor(public auth: AuthService, public router: Router) {}
-
-  canActivate(): boolean {
-    if (!this.auth.getAuthHeaders()) {
+  async canActivate(): Promise<boolean> {
+    try {
+      await this.auth.isLoggedIn();
+      return true;
+    } catch (error) {
       this.router.navigate(['server']);
       return false;
     }
-    return true;
   }
-
 }
