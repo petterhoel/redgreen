@@ -1,4 +1,4 @@
-export interface ServerCredentials {
-  server: string;
-  token: string;
+export class ServerCredentials {
+  server: string = '';
+  token: string  = '';
 }

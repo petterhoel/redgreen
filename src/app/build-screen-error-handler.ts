@@ -7,7 +7,7 @@ import { ConfigService } from './config.service';
 })
 export class BuildScreenErrorHandler implements ErrorHandler {
   constructor(private configService: ConfigService) { }
-  handleError(error) {
+  handleError(error: any) {
     if (this.configService.config && this.configService.config.sentry.use) {
       Sentry.captureException(error.originalError || error);
     } else {

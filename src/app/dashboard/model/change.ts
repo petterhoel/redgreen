@@ -1,7 +1,7 @@
 export class Change {
-  id: number = -99;
+  id: number = -1;
   version: string = '';
   username: string = '';
-  date: Date = null;
+  date?: Date;
   comment: string = '';
 }

@@ -12,6 +12,6 @@ export class LatestBuildsComponent {
   builds$ = this.buildData
     .filteredBuilds$
     .pipe(tap(() => this.updated$.next(new Date())));
-  updated$ = new BehaviorSubject<Date>(null);
+  updated$ = new BehaviorSubject<Date>(new Date(0));
   constructor(private buildData: BuildStoreService) { }
 }

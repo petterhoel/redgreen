@@ -16,7 +16,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   server = ``;
   credentials$ = this.authService
     .logins$
-    .pipe(tap(value => {
+    .pipe(tap((value: ServerCredentials) => {
       this.credentials = value;
     }));
 
@@ -49,13 +49,4 @@ export class AuthComponent implements OnInit, OnDestroy {
         error => console.log(error)
       );
   }
-
-  errorHandler(error): void {
-    switch (error.status) {
-      case 0: console.log(error); break;
-      case 401: alert('There was an error testing the server connection.\n\nInvalid credentials'); break;
-      default: break;
-    }
-  }
-
 }

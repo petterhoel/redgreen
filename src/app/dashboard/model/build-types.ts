@@ -1,5 +1,5 @@
 import { BuildType } from './build-type';
 
-export class BuildTypes {
+export interface BuildTypes {
   buildType: BuildType[];
  }
