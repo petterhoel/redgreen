@@ -1,4 +1,4 @@
 import { Change } from './change';
-export class LastChanges {
-  change: Change[] = [];
+export interface LastChanges {
+  change: Change[];
 }

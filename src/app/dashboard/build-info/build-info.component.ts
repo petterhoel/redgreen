@@ -1,22 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { BuildInfo } from '../model/build-info';
 
+const defaultBuild: BuildInfo = {
+  branchName: '',
+  comment: '',
+  commit: '',
+  date: new Date(0),
+  id: '',
+  name: 'N/A',
+  number: '',
+  status: '',
+  statusText: '',
+  username: '',
+};
 @Component({
   selector: 'app-build-info',
   templateUrl: './build-info.component.html',
-  styleUrls: ['./build-info.component.scss']
+  styleUrls: ['./build-info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BuildInfoComponent {
-  private aBuild: BuildInfo;
-  @Input() set build(info: BuildInfo) {
-    this.aBuild = info;
-    this.open = info.status.toLowerCase() !== 'success';
-  }
-
-  get build(): BuildInfo {
-    return this.aBuild;
-  }
-
+  @Input() build: BuildInfo = defaultBuild;
   open = false;
 
   toggleExpander(): void {

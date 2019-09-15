@@ -8,7 +8,7 @@ import { CredentialsService } from './credentials.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private loginsSource$ = new BehaviorSubject<ServerCredentials>(null);
+  private loginsSource$ = new BehaviorSubject<ServerCredentials>(new ServerCredentials());
   logins$ = this.loginsSource$.asObservable();
   private get server(): string {
     return this.loginsSource$.value.server;

@@ -5,6 +5,5 @@ import { IConfig } from 'src/config-loader';
   providedIn: 'root'
 })
 export class ConfigService {
-  config: IConfig;
-  constructor() { }
+  config: IConfig | undefined;
 }
