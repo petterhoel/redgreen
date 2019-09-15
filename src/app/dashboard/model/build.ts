@@ -3,6 +3,6 @@ export class Build {
   number: string = '';
   status: string  = '';
   statusText: string  = '';
-  lastChanges?: LastChanges;
+  lastChanges: LastChanges = { change: [] };
   branchName: string  = '';
 }

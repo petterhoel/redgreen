@@ -6,5 +6,4 @@ import { IConfig } from 'src/config-loader';
 })
 export class ConfigService {
   config: IConfig | undefined;
-  constructor() { }
 }

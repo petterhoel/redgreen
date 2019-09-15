@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { BuildStoreService } from '../build-store.service';
 import { tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
@@ -6,7 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'app-latest-builds',
   templateUrl: './latest-builds.component.html',
-  styleUrls: ['./latest-builds.component.scss']
+  styleUrls: ['./latest-builds.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LatestBuildsComponent {
   builds$ = this.buildData
