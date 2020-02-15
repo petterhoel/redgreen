@@ -10,7 +10,7 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "architect": {
@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "TeamCityBuildScreen"
+  "defaultProject": "TeamCityBuildScreen",
+  "cli": {
+    "analytics": "8c2b42b3-0cb3-4bf3-9749-78db0a1c5c4a"
+  }
 }
