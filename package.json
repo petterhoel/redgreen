@@ -8,7 +8,8 @@
     "test": "ng test",
     "netlifybuild": "ng build --prod && node buildscript/write-config.js && sh buildscript/associate-sentry-release-and-commit.sh",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "update": "ng update @angular/cli @angular/core"
   },
   "husky": {
     "hooks": {
