@@ -13,7 +13,6 @@ This version uses token-based authentication. Supported by Team City versions 20
 - [x] Filter which builds to display.
 - [x] Error tracking using [sentry ](https://sentry.io/) with their standard sensitive data scrubbing.
 
-
 ## Todo
 - [ ] Error visualization
     - Login
@@ -48,11 +47,8 @@ This version uses token-based authentication. Supported by Team City versions 20
 ## Can't log in or get data? (CORS)
 Your TeamCity server must accept requests from where ever you host the buildscreen. Please check [TeamCity docs](https://confluence.jetbrains.com/display/TCD18/REST+API#RESTAPI-CORSSupport) on how to do this.
 
-## Hosted version [![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/buildscreen/deploys)
-Yes we are live on [netlify](https://buildscreen.netlify.com/).
-
 ## Development
-This is a project written in Angular.
+This project is written in Angular.
 
 ### Angular CLI
 You'll need Angular cli installed globally or you can use npx if you don't like global installs. The following assumes running the Angular cli.
@@ -66,7 +62,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/<ProjectName>` directory. Use the `--prod` flag for a production build.
 
-## Running with docker
+## CI/CD
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/redgreen/deploys)
+Changes merged to master will go live with the help of [netlify](https://netlify.com)
+
+## Wanna run docker
 1. Build with `docker build .`.
 1. Note image hash, start with `docker run -d -p 8008:80 *hash* `.
 1. Find running container hash with `docker container ls`.
