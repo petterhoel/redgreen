@@ -62,8 +62,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/<ProjectName>` directory. Use the `--prod` flag for a production build.
 
-## CI/CD
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/redgreen/deploys)
+## CI/CD [![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/redgreen/deploys)
 Changes merged to master will go live with the help of [netlify](https://netlify.com)
 
 ## Wanna run docker
