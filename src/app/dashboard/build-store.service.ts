@@ -54,10 +54,9 @@ export class BuildStoreService implements OnDestroy {
   }
 
   private mapAndSortList(serverList: BuildType[]): BuildInfo[] {
-    const infolist = serverList
+    return serverList
       .map(item => this.buildTypeToBuildInfo(item))
       .sort(this.sort);
-    return infolist;
   }
 
   private getStoredHiddenBuildList(): string[] {
@@ -65,8 +64,7 @@ export class BuildStoreService implements OnDestroy {
     if (!stringedItems) {
       return [];
     }
-    const hiddenBuilds: string[] = JSON.parse(stringedItems);
-    return hiddenBuilds;
+    return JSON.parse(stringedItems);
   }
 
   private loadHiddenBuilds(): void {
@@ -90,13 +88,23 @@ export class BuildStoreService implements OnDestroy {
     const build = deepBuild.builds.build.length ? deepBuild.builds.build[0] : new Build();
     const change = build && build.lastChanges && build.lastChanges.change.length ? build.lastChanges.change[0] : new Change();
     const { id, name } = deepBuild;
-    // tslint:disable-next-line:variable-name
-    const { number, status, statusText, branchName } = build;
+    // @ts-d
+    const {
+      /* tslint:disable */
+      number,
+      // @ts-ignore
+      status,
+      // @ts-ignore
+      statusText,
+      // @ts-ignore
+      branchName
+    } = build;
     const { username, date, comment, version: commit } = change;
 
-    const flatbuild: BuildInfo = {
+    return {
       id,
       name,
+      // @ts-ignore
       number,
       status,
       statusText,
@@ -106,6 +114,5 @@ export class BuildStoreService implements OnDestroy {
       comment,
       commit,
     };
-    return flatbuild;
   }
 }

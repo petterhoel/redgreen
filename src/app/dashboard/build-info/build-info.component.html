@@ -2,9 +2,10 @@
   [ngClass]="build.status | lowercase"
   class="wrapper">
   <header (click)="toggleExpander()" class="space-content">
-    <span>
-      {{ build.id }}
-    </span>
+    <span class="space-content">
+      <app-status-icon [status]="build.status"></app-status-icon>
+      <span>{{ build.id }} </span>
+      </span>
     <span class="ellipsis">
       {{ build.number }}
     </span>

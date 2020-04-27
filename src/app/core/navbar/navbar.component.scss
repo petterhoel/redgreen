@@ -1,3 +1,4 @@
+@import './../../../colors.scss';
 nav {
   display: flex;
   flex-direction: row;
@@ -8,12 +9,15 @@ nav > * {
 }
 
 h1 {
-  margin: 0,
+  margin: 0;
+  background: -webkit-linear-gradient(45deg, #f3538b, var(--failure));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 ul {
   margin: 0;
-  padding: 0;
+  padding: 4px 0 0 10px;
   display: flex;
   flex-direction: row;
 }
@@ -25,12 +29,14 @@ li {
 
 a{
   text-decoration: none;
-  color: aliceblue,
+  color: aliceblue;
 }
 
 a.router-link-active {
-  color: #00a5dd;
+  color: var(--failure);
   font-style: italic;
+  transition: color .2s ease-in;
+  border-bottom: 1px solid var(--success);
 }
 
 

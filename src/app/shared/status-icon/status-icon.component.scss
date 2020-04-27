@@ -1,0 +1,20 @@
+svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+}
+
+path,
+circle,
+polygon,
+line {
+  stroke: #efff7e;
+}
+
+svg.failure path {
+  stroke: var(--failure)!important;
+}
+
+svg.sucess path {
+  stroke: var(--success)!important;
+}

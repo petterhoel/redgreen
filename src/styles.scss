@@ -57,9 +57,10 @@ input:focus {
 }
 
 button {
-  background-color: plum;
+  $dark: darken(#82f2ce, 40%);
+  background-color: var(--success);
   border: none;
-  border-bottom: 3px solid darken(plum, 30%);
+  border-bottom: 3px solid $dark;
   padding: 5px;
   border-radius: 2px;
   min-height: 30px;
@@ -125,7 +126,7 @@ ul.dashed li:before {
       content: "";
       width: 1.0rem;
       height: 0.3rem;
-      border: 4px solid plum;
+      border: 4px solid var(--success);
       border-right: none;
       border-top: none;
       transform: rotate(-45deg);

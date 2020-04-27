@@ -2,7 +2,7 @@ export interface BuildInfo {
   id: string;
   name: string;
   number: string;
-  status: string;
+  status: 'FAILURE' | 'SUCCESS';
   statusText: string;
   branchName: string;
   username: string;

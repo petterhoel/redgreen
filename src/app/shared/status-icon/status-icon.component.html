@@ -1,0 +1,56 @@
+<svg *ngIf="status === BuildStatus.SUCCESS" class="sucess" xmlns='http://www.w3.org/2000/svg' width='512' height='512'
+     viewBox='0 0 512 512'><title>ionicons-v5-n</title>
+  <path
+    d='M215.08,156.92c-4.89-24-10.77-56.27-10.77-73.23A51.36,51.36,0,0,1,256,32h0c28.55,0,51.69,23.69,51.69,51.69,0,16.5-5.85,48.95-10.77,73.23'
+    style='fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <path
+    d='M215.08,355.08c-4.91,24.06-10.77,56.16-10.77,73.23A51.36,51.36,0,0,0,256,480h0c28.55,0,51.69-23.69,51.69-51.69,0-16.54-5.85-48.93-10.77-73.23'
+    style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <path
+    d='M355.08,215.08c24.06-4.91,56.16-10.77,73.23-10.77A51.36,51.36,0,0,1,480,256h0c0,28.55-23.69,51.69-51.69,51.69-16.5,0-48.95-5.85-73.23-10.77'
+    style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <path
+    d='M156.92,215.07c-24-4.89-56.25-10.76-73.23-10.76A51.36,51.36,0,0,0,32,256h0c0,28.55,23.69,51.69,51.69,51.69,16.5,0,48.95-5.85,73.23-10.77'
+    style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <path
+    d='M296.92,156.92c13.55-20.48,32.3-47.25,44.37-59.31a51.35,51.35,0,0,1,73.1,0h0c20.19,20.19,19.8,53.3,0,73.1-11.66,11.67-38.67,30.67-59.31,44.37'
+    style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <path
+    d='M156.92,296.92c-20.48,13.55-47.25,32.3-59.31,44.37a51.35,51.35,0,0,0,0,73.1h0c20.19,20.19,53.3,19.8,73.1,0,11.67-11.66,30.67-38.67,44.37-59.31'
+    style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <path
+    d='M355.08,296.92c20.48,13.55,47.25,32.3,59.31,44.37a51.35,51.35,0,0,1,0,73.1h0c-20.19,20.19-53.3,19.8-73.1,0-11.69-11.69-30.66-38.65-44.37-59.31'
+    style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <path
+    d='M215.08,156.92c-13.53-20.43-32.38-47.32-44.37-59.31a51.35,51.35,0,0,0-73.1,0h0c-20.19,20.19-19.8,53.3,0,73.1,11.61,11.61,38.7,30.68,59.31,44.37'
+    style='fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <circle cx='256' cy='256' r='64'
+          style='fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+</svg>
+
+<svg *ngIf="status === BuildStatus.FAILURE" class="failure" xmlns='http://www.w3.org/2000/svg' width='512' height='512'
+     viewBox='0 0 512 512'><title>ionicons-v5-l</title>
+  <path
+    d='M448,225.64v99a64,64,0,0,1-40.23,59.42l-23.68,9.47A32,32,0,0,0,364.6,417l-10,50.14A16,16,0,0,1,338.88,480H173.12a16,16,0,0,1-15.69-12.86L147.4,417a32,32,0,0,0-19.49-23.44l-23.68-9.47A64,64,0,0,1,64,324.67V224C64,118.08,149.77,32.19,255.65,32S448,119.85,448,225.64Z'
+    style='fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <circle cx='168' cy='280' r='40'
+          style='fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <circle cx='344' cy='280' r='40'
+          style='fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px'/>
+  <polygon points='256 336 240 384 272 384 256 336'
+           style='fill:none;;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/>
+  <line x1='256' y1='448' x2='256' y2='480'
+        style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/>
+  <line x1='208' y1='448' x2='208' y2='480'
+        style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/>
+  <line x1='304' y1='448' x2='304' y2='480'
+        style='fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/>
+</svg>
+
+<svg *ngIf="status !== BuildStatus.FAILURE && status !== BuildStatus.SUCCESS" xmlns='http://www.w3.org/2000/svg'
+     width='512' height='512' viewBox='0 0 512 512'><title>ionicons-v5-a</title>
+  <path d='M256,80c-8.66,0-16.58,7.36-16,16l8,216a8,8,0,0,0,8,8h0a8,8,0,0,0,8-8l8-216C272.58,87.36,264.66,80,256,80Z'
+        style='fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/>
+  <circle cx='256' cy='416' r='16'
+          style='fill:none;;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/>
+</svg>

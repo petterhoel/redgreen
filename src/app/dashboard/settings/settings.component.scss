@@ -1,23 +1,10 @@
-:host {
-  display: grid;
-  grid-template-areas: "info builds"
-}
-
-@media screen and (max-width: 699px) {
-  :host {
-    grid-template-columns: 1 / -1;
-    grid-template-areas:
-      "info"
-      "builds"
-  }
+h2 {
+  font-size: 20px;
 }
 
 .info {
-  grid-area: info;
-  max-width: 200px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .builds {
@@ -26,12 +13,6 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-gap: 6px;
   grid-column-gap: 30px;
-}
-
-@media screen and (min-width: 700px){
-  .builds {
-    min-width: 500px;
-  }
 }
 
 .item {

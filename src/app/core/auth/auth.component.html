@@ -1,25 +1,27 @@
 <section class="aligner">
-  <form #form="ngForm" class="wrapper" (ngSubmit)="test()">
+  <form #form="ngForm" class="wrapper" (keyup.enter)="submitForm()" (ngSubmit)="submitForm()">
 
     <div class="input">
       <label for="server">Server </label>
       <input
         type="text"
         name="server"
+        id="server"
         required
         [pattern]="pattern"
         [(ngModel)]="credentials.server">
     </div>
 
     <div class="input">
-      <label for="c">Token </label>
+      <label for="token">Token </label>
       <input
+        id="token"
         type="password"
         name="token"
         required
         [(ngModel)]="credentials.token">
     </div>
-    <button (click)="test()" type="submit" [disabled]="form.invalid">Log in with token</button>
+    <button (click)="submitForm()" type="submit" [disabled]="form.invalid">Log in with token</button>
     <button (click)="clearCredentials();form.reset()" type="button" class="reset">Clear credentials</button>
     <app-info-box>
       FYI: We use sentry.io for error monitoring. Don't worry, sensitve data are being scrubbed.
