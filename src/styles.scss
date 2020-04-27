@@ -11,11 +11,18 @@ html, body, app-root {
 }
 
 body {
-  margin: 0px 16px;
-  background-color: #1f2534;
-  font-family: $sans-serif;
+  margin: 0;
+  background-color: var(--backgroundColor);
+  color: var(--app-white);
+}
+
+body,
+select,
+input,
+button {
+  font-family: var(--sans-serif);
   letter-spacing: 0.002em;
-  color: $app-white;
+  font-size: 1em;
 }
 
 @media screen and (max-width: 699px) {
@@ -24,8 +31,14 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $accentfont
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre {
+  font-family: var(--sans-serif)
 }
 
 .quote {
@@ -34,26 +47,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.02em;
 }
 
-a {
-  color: #00a5dd;
-}
-pre {
-  font-family: $monospace;
-}
-
 input {
   background: transparent;
-  border: none;
-  border-bottom-color: currentcolor;
-  border-bottom-style: none;
-  border-bottom-width: medium;
-  color: $app-white;
+  color: var(--app-white);
+  border-top-style: none;
+  border-right-style: none;
   border-bottom: 1px solid #81848d;
+  border-left-style: none;
   padding: 5px;
 }
 
 input:focus {
-  border-bottom: 1px solid $app-white;
+  border-bottom: 1px solid var(--app-white);
 }
 
 button {
@@ -64,7 +69,6 @@ button {
   padding: 5px;
   border-radius: 2px;
   min-height: 30px;
-  font-size: $font-size;
 }
 
 button.reset {
@@ -100,7 +104,7 @@ ul.dashed li:before {
       /* Style the box. */
       width: 1.6rem;
       height: 1.6rem;
-      border: 1px solid $subtle;
+      border: 1px solid var(--subtle);
       cursor: pointer;
     }
     input[type="checkbox"]:focus {

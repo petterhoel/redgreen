@@ -25,31 +25,31 @@ input {
   flex-grow: 2;
   margin: 0 .25rem;
   min-width: 125px;
-  border: 1px solid $subtle;
-  border-left: 3px solid $subtle;
+  border: 1px solid var(--subtle);
+  border-left: 3px solid var(--subtle);
   border-radius: 2px;
-  transition: border-color .5s ease-out;
+  transition: border-color .2s ease-out;
 }
 
 input:focus {
-  border: 1px solid $subtle2;
-  border-left: 3px solid $subtle2;
-  transition: border-color .5s ease-out;
+  border: 1px solid var(--subtle2);
+  border-left: 3px solid var(--subtle2);
+  transition: border-color .2s ease-out;
   outline: none;
 }
 
 input.ng-invalid {
-  border-left: 3px solid $failure;
+  border-left: 3px solid var(--failure);
 }
 
 input[name="server"].ng-valid,
 input[name="token"].ng-valid,
 input.ng-valid {
-  border-left: 3px solid $success;
+  border-left: 3px solid var(--success);
 }
 
 input.ng-untouched{
-  border-left: 1px solid $subtle !important;
+  border-left: 1px solid var(--subtle) !important;
 }
 
 label {
