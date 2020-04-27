@@ -32,21 +32,25 @@ export class AuthComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
-  updateCredentials(): void {
-    this.authService.setAuth(this.credentials);
-  }
-
   clearCredentials(): void {
     this.authService.clearAuthentication();
   }
 
-
-  test(): void {
+  submitForm(): void {
+    this.trimCredentialValues();
     this.authService.setAuth(this.credentials);
     this.authService.isLoggedIn()
       .then(
         () => this.router.navigate(['dashboard']),
         error => console.log(error)
       );
+  }
+
+  trimCredentialValues(): void {
+    const {server, token} = this.credentials;
+    this.credentials = {
+      server: server.trim(),
+      token: token.trim()
+    }
   }
 }

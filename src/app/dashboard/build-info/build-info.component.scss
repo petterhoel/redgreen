@@ -4,27 +4,25 @@
 
 .wrapper {
   padding: 10px;
-  background-color: rgba($color: white, $alpha: .9);
   border-radius: 3px;
-}
-
-.failure {
-  background-color: $failure;
-}
-
-.success {
-  background-color: $success;
+  font-size: 12px;
+  color: aliceblue;
 }
 
 header {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .space-content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.space-content:first-child,
+.pad-right:first-child {
+  margin-right: 6px;
 }
 
 .ellipsis {

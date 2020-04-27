@@ -9,7 +9,7 @@ const defaultBuild: BuildInfo = {
   id: '',
   name: 'N/A',
   number: '',
-  status: '',
+  status: 'FAILURE',
   statusText: '',
   username: '',
 };

@@ -1,9 +1,7 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subscription } from 'rxjs';
-import { AuthService } from '../core/auth/auth.service';
+import { Observable } from 'rxjs';
 import { BuildTypes } from './model/build-types';
-import { tap } from 'rxjs/operators';
 import { BaseDataService } from '../shared/base-data.service';
 import { CredentialsService } from '../core/auth/credentials.service';
 
