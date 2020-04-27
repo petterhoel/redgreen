@@ -1,7 +1,8 @@
 <div
+  (click)="toggleExpander()"
   [ngClass]="build.status | lowercase"
   class="wrapper">
-  <header (click)="toggleExpander()" class="space-content">
+  <header class="space-content">
     <span class="space-content">
       <app-status-icon [status]="build.status"></app-status-icon>
       <span>{{ build.id }} </span>

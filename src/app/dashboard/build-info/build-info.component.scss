@@ -1,12 +1,16 @@
 @import './src/fonts.scss';
 @import './src/colors.scss';
 
-
 .wrapper {
   padding: 10px;
   border-radius: 3px;
   font-size: 12px;
   color: aliceblue;
+}
+
+.wrapper:hover {
+  background: lighten(#1f2534, 10%);
+  border-radius: 8px;
 }
 
 header {
@@ -32,8 +36,8 @@ header {
 }
 
 .commit {
-  font-family: $monospace;
-  word-wrap: anywhere;
+  font-family: var(--monospace);
+  word-wrap: break-spaces;
   font-size: 12px;
   cursor: pointer;
 }
@@ -55,7 +59,7 @@ span[aria-label]:hover:after {
    top: 120%;
    white-space: nowrap;
    z-index: 20;
-   background:white;
+   background:var(--backgroundColor);
 }
 
 .body > div {
@@ -68,8 +72,4 @@ span[aria-label]:hover:after {
 
 .quote {
   margin: 6px 0!important;
-}
-
-:host {
-  color: #1f2534;
 }

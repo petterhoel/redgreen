@@ -12,9 +12,9 @@ line {
 }
 
 svg.failure path {
-  stroke: var(--failure)!important;
+  stroke: var(--failure);
 }
 
 svg.sucess path {
-  stroke: var(--success)!important;
+  stroke: var(--success);
 }
