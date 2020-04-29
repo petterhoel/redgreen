@@ -89,7 +89,7 @@ export class BuildStoreService implements OnDestroy {
     // tslint:disable:radix
     const year = parseInt(d.substring(0, 4));
     const month = parseInt(d.substring(4, 6)) - 1
-    const days = parseInt(d.substring(6, 8)) - 1
+    const days = parseInt(d.substring(6, 8))
     const hours = parseInt(d.substring(9, 11))
     const minutes = parseInt(d.substring(11, 13))
     const seconds = parseInt(d.substring(13, 15))
