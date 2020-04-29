@@ -1,5 +1,5 @@
 <aside *ngIf="updated$ | async as updated">
-  <span *ngIf="!updated">not </span> updated {{updated ? (updated | amTimeAgo) : ''}}
+  <span *ngIf="!updated">not </span> updated {{updated ? (updated | dfnsFormatDistanceToNow: {addSuffix:true}) : ''}}
 </aside>
 <div class="builds" *ngIf="builds$ | async as builds">
   <app-build-info class="build-item" [build]="build" *ngFor="let build of builds"></app-build-info>
