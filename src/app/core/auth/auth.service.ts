@@ -8,6 +8,7 @@ import { CredentialsService } from './credentials.service';
   providedIn: 'root'
 })
 export class AuthService {
+  private defaultCredentials: ServerCredentials = {server: 'https://', token: '' }
   private loginsSource$ = new BehaviorSubject<ServerCredentials>(new ServerCredentials());
   logins$ = this.loginsSource$.asObservable();
   private get server(): string {

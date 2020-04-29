@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
-@import './colors.scss';
-
+@import './theme.scss';
 * {
   box-sizing: border-box;
 }
@@ -50,15 +49,36 @@ pre {
 input {
   background: transparent;
   color: var(--app-white);
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom: 1px solid #81848d;
-  border-left-style: none;
-  padding: 5px;
+  padding: var(--std-padding);
+  font-size: 16px;
+  flex-grow: 2;
+  min-width: 125px;
+  border: 1px solid var(--subtle2);
+  border-bottom: 2px solid var(--subtle2);
+  border-radius: var(--border-radius);
+  transition: border-color .2s ease-out;
 }
 
 input:focus {
-  border-bottom: 1px solid var(--app-white);
+  transition: all .2s ease-in;
+  background: var(--backgroundColor-lighter);
+}
+
+input.ng-invalid {
+  border-bottom-color: var(--failure);
+}
+
+input.ng-valid {
+  border-bottom-color: var(--success);
+}
+
+input.ng-invalid.ng-untouched,
+input.ng-untouched {
+  border-bottom-color: var(--subtle2);
+}
+
+label {
+  min-width: 90px;
 }
 
 button {
@@ -66,14 +86,19 @@ button {
   background-color: var(--success);
   border: none;
   border-bottom: 3px solid $dark;
-  padding: 5px;
-  border-radius: 2px;
+  padding: var(--std-padding);
+  border-radius: var(--border-radius);
   min-height: 30px;
 }
 
 button.reset {
-  background-color: lighten(gray, 70%);
-  border-bottom:3px solid lighten(#00a5dd, 30);
+  background-color: transparent;
+  border: none;
+  color: var(--app-white);
+  flex-shrink: 1;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: var(--success);
+  text-decoration-line: underline;
 }
 
 ul {

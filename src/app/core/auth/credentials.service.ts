@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ServerCredentials } from './server-credentials';
-import { TouchSequence } from 'selenium-webdriver';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CredentialsService {
   private readonly LOCAL_STORAGE_KEY: string = 'server-credentials';
-  private readonly emptyCredentials: ServerCredentials = { server: '', token: '' };
+  private readonly emptyCredentials: ServerCredentials = { server: 'https://', token: '' };
 
   setCredentials(credentials: ServerCredentials): void {
     const credParsed = JSON.stringify(credentials);
@@ -22,6 +21,9 @@ export class CredentialsService {
     const credentials = JSON.parse(credFromStorage) as ServerCredentials;
     if (!credentials) {
       return this.emptyCredentials;
+    }
+    if (!credentials.server.trim()){
+      credentials.server = this.emptyCredentials.server;
     }
     return credentials;
   }

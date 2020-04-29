@@ -1,7 +1,7 @@
 .info-box {
   background-color: rgba($color: white, $alpha: .2);
-  border-left: 3px solid aliceblue;
-  padding: 1em;
+  border-left: 3px solid var(--app-white);
+  border-radius: var(--border-radius);
+  padding: var(--std-padding);
   display: block;
-  max-width: 99%;
 }

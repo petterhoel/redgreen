@@ -11,9 +11,9 @@ $navHeight: 48px;
 app-navbar{
   grid-area: navbar;
   display: flex;
-  padding: 0 1em;
+  padding: 2em 1em;
   height: $navHeight;
-  background-color: var(--backgroundColor);
+  background-color: var(--backgroundColor-lighter);
 }
 
 .router-outlet {
