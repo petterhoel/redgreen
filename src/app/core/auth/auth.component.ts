@@ -12,8 +12,7 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthComponent implements OnInit, OnDestroy {
-  credentials: ServerCredentials = {server: '', token: ''};
-  server = ``;
+  credentials: ServerCredentials = {server: 'https://', token: ''};
   credentials$ = this.authService
     .logins$
     .pipe(tap((value: ServerCredentials) => {

@@ -2,8 +2,9 @@
   <form #form="ngForm" class="wrapper" (keyup.enter)="submitForm()" (ngSubmit)="submitForm()">
 
     <div class="input">
-      <label for="server">Server </label>
+      <label for="server">Server url </label>
       <input
+        appAutoFocus
         type="text"
         name="server"
         id="server"
@@ -22,9 +23,12 @@
         [(ngModel)]="credentials.token">
     </div>
     <button (click)="submitForm()" type="submit" [disabled]="form.invalid">Log in with token</button>
-    <button (click)="clearCredentials();form.reset()" type="button" class="reset">Clear credentials</button>
+    <button (click)="clearCredentials();form.reset()" type="button" class="reset">Wipe credentials</button>
+
     <app-info-box>
-      FYI: We use sentry.io for error monitoring. Don't worry, sensitve data are being scrubbed.
+      Please use an account that is readonly and nonsensitive. Token is stored on the client.
+      <br><br>
+      We use sentry.io for error monitoring. Don't worry, sentry scrubs sensitve data 😇
     </app-info-box>
     <app-server-info></app-server-info>
   </form>

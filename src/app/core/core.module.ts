@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ServerInfoComponent } from './server-info/server-info.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { AutoFocusDirective } from './auth/auto-focus.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     NavbarComponent,
     ServerInfoComponent,
     InfoBoxComponent,
+    AutoFocusDirective,
   ],
   imports: [
     CommonModule,
