@@ -20,7 +20,7 @@
         {{build.username}}
       </span>
       <span>
-        {{build.date ? (build.date | amTimeAgo) : ''}}
+        {{build.date ? (build.date | dfnsFormatDistanceToNow:{addSuffix:true} ) : ''}}
       </span>
     </div>
     <div class="space-content">

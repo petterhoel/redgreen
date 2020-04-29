@@ -2,6 +2,8 @@ export class Change {
   id: number = -1;
   version: string = '';
   username: string = '';
-  date?: Date;
+  date: string = '';
   comment: string = '';
 }
+
+

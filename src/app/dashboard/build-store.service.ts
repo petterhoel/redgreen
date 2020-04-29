@@ -84,6 +84,18 @@ export class BuildStoreService implements OnDestroy {
 
   sort(a: BuildInfo, b: BuildInfo) { return a.id.localeCompare(b.id); }
 
+
+  dateparser(d: string): Date {
+    // tslint:disable:radix
+    const year = parseInt(d.substring(0, 4));
+    const month = parseInt(d.substring(4, 6)) - 1
+    const days = parseInt(d.substring(6, 8)) - 1
+    const hours = parseInt(d.substring(9, 11))
+    const minutes = parseInt(d.substring(11, 13))
+    const seconds = parseInt(d.substring(13, 15))
+    return new Date(year, month, days, hours, minutes, seconds);
+  }
+
   buildTypeToBuildInfo(deepBuild: BuildType): BuildInfo {
     const build = deepBuild.builds.build.length ? deepBuild.builds.build[0] : new Build();
     const change = build && build.lastChanges && build.lastChanges.change.length ? build.lastChanges.change[0] : new Change();
@@ -106,7 +118,7 @@ export class BuildStoreService implements OnDestroy {
       statusText,
       branchName: branchName ? branchName : '',
       username,
-      date,
+      date: this.dateparser(date),
       comment,
       commit,
     };
