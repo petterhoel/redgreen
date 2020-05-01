@@ -1,5 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ServerDataService } from './server-data.service';
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-server-info',
@@ -8,6 +10,7 @@ import { ServerDataService } from './server-data.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ServerInfoComponent {
-  server$ = this.serverData.getServerInfo();
-  constructor( private serverData: ServerDataService) { }
+  server$ = this.serverData.getServerInfo().pipe(catchError(() => of(null)));
+  constructor( private serverData: ServerDataService) {
+  }
 }

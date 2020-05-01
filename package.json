@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4300",
+    "start": "ng serve --port 4200",
     "build": "ng build",
     "test": "ng test",
     "netlifybuild": "ng build --prod && node buildscript/write-config.js && sh buildscript/associate-sentry-release-and-commit.sh",

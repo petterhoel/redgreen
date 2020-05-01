@@ -19,7 +19,7 @@ app-navbar{
 .router-outlet {
   grid-area: content;
   padding: 0 10px;
-  height: calc(100vh - 48px);;
-  max-height: calc(100vh - 48px);
+  height: calc(100vh - (48px + 2em));
+  max-height: calc(100vh - (48px + 2em));
   overflow: auto;
 }

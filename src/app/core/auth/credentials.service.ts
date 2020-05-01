@@ -8,7 +8,7 @@ export class CredentialsService {
   private readonly LOCAL_STORAGE_KEY: string = 'server-credentials';
   private readonly emptyCredentials: ServerCredentials = { server: 'https://', token: '' };
 
-  setCredentials(credentials: ServerCredentials): void {
+  saveCredentials(credentials: ServerCredentials): void {
     const credParsed = JSON.stringify(credentials);
     localStorage.setItem(this.LOCAL_STORAGE_KEY, credParsed);
   }

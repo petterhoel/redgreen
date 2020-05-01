@@ -1,9 +1,13 @@
 <section class="aligner">
   <form #form="ngForm" class="wrapper" (keyup.enter)="form.ngSubmit.emit()" (ngSubmit)="submitForm()">
+    <app-hint [class.hidden]="!maybeCorsError">Please verify your url and ensure <a href="https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-CORSSupport" target="_blank">CORS is enabled</a> for {{hostname}}.
+    </app-hint>
+    <app-hint [class.hidden]="!authError">Login failed</app-hint>
     <label for="server">Server url </label>
     <input
       appAutoFocus
       type="text"
+      #serverInput
       #server="ngModel"
       name="server"
       id="server"
@@ -21,14 +25,11 @@
       [(ngModel)]="credentials.token">
     <app-hint [class.hidden]="token.valid || token.untouched"> Please supply a vaild token.</app-hint>
     <button type="submit" [disabled]="form.invalid">Log in with token</button>
-    <app-hint [class.hidden]="!authError">Please verify your url an ensure <a href="https://www.jetbrains.com/help/teamcity/rest-api.html#RESTAPI-CORSSupport" target="_blank">CORS is enabled</a> for {{hostname}}.
-    </app-hint>
-    <button (click)="clearCredentials();form.reset()" type="button" class="reset">Wipe credentials</button>
+    <button (click)="clearCredentials();form.reset();serverInput.focus()" type="button" class="reset">Wipe credentials</button>
     <app-info-box>
       Please use an account that is readonly and nonsensitive. Token is stored on the client.
       <br><br>
       We use sentry.io for error monitoring. Don't worry, sentry scrubs sensitve data 😇
     </app-info-box>
-    <app-server-info></app-server-info>
   </form>
 </section>
