@@ -10,6 +10,7 @@ import { ServerInfoComponent } from './server-info/server-info.component';
 import { InfoBoxComponent } from './info-box/info-box.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AutoFocusDirective } from './auth/auto-focus.directive';
+import { HintComponent } from './hint/hint.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AutoFocusDirective } from './auth/auto-focus.directive';
     ServerInfoComponent,
     InfoBoxComponent,
     AutoFocusDirective,
+    HintComponent
   ],
   imports: [
     CommonModule,

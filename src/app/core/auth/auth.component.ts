@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit, OnDestroy {
   credentials: ServerCredentials = {server: 'https://', token: ''};
@@ -18,6 +17,9 @@ export class AuthComponent implements OnInit, OnDestroy {
     .pipe(tap((value: ServerCredentials) => {
       this.credentials = value;
     }));
+
+  hostname = location.hostname;
+  authError = false;
 
   pattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
   private subs = new SubSink();
@@ -36,12 +38,18 @@ export class AuthComponent implements OnInit, OnDestroy {
   }
 
   submitForm(): void {
-    this.trimCredentialValues();
+    this.authError = false
+
     this.authService.setAuth(this.credentials);
     this.authService.isLoggedIn()
       .then(
         () => this.router.navigate(['dashboard']),
-        error => console.log(error)
+        responseError => {
+          const { error, status } = responseError;
+          if (error && status === 0) {
+            this.authError = true;
+          }
+        }
       );
   }
 

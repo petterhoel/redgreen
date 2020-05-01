@@ -12,20 +12,25 @@
   display: flex;
   flex-direction: column;
 }
-.wrapper > * {
-  margin-bottom: 10px;
-}
 
 .input {
   display: flex;
   flex-direction: column;
 }
 
-label {
+label,
+app-hint {
   padding-left: 2px;
-  padding-bottom: 2px;
 }
 
-button[type="submit"] {
-  margin-top: 1em;
+label {
+  font-size: small;
+  padding-bottom: 2px;
+}
+app-hint {
+  margin-bottom: 4px;
+}
+
+app-hint.hidden {
+  visibility: hidden;
 }
