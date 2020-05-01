@@ -14,7 +14,7 @@ export class ServerDataService extends BaseDataService {
   }
 
   getServerInfo(): Observable<ServerInfo> {
-    const url = `${this.serverUrl}/app/rest/latest/server`;
+    const url = `${this.serverUrl}/guestAuth/app/rest/latest/server`;
     return this.http.get<ServerInfo>(url);
   }
 }

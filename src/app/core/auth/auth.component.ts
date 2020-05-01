@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from './auth.service';
 import { tap } from 'rxjs/operators';
 import { ServerCredentials } from './server-credentials';
@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit, OnDestroy {
   credentials: ServerCredentials = {server: 'https://', token: ''};
@@ -19,9 +18,16 @@ export class AuthComponent implements OnInit, OnDestroy {
       this.credentials = value;
     }));
 
+  hostname = location.hostname;
+  maybeCorsError = false;
+  authError = false;
+
   pattern = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
   private subs = new SubSink();
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private authService: AuthService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.subs.sink = this.credentials$.subscribe();
@@ -33,23 +39,29 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   clearCredentials(): void {
     this.authService.clearAuthentication();
+    this.clearErrors()
   }
 
-  submitForm(): void {
-    this.trimCredentialValues();
-    this.authService.setAuth(this.credentials);
-    this.authService.isLoggedIn()
-      .then(
-        () => this.router.navigate(['dashboard']),
-        error => console.log(error)
-      );
+  private clearErrors(): void {
+    this.maybeCorsError = false;
+    this.authError = false;
   }
 
-  trimCredentialValues(): void {
-    const {server, token} = this.credentials;
-    this.credentials = {
-      server: server.trim(),
-      token: token.trim()
+  async submitForm(): Promise<any> {
+    this.clearErrors()
+    try {
+      await this.authService.tryCredentials(this.credentials)
+      await this.router.navigate(['dashboard'])
+    } catch (responseError) {
+      const { status } = responseError;
+      console.log(responseError)
+      if (status === 0) {
+        this.maybeCorsError = true;
+      }
+      if (status === 401) {
+        this.authError = true;
+      }
+      this.cdr.detectChanges();
     }
   }
 }

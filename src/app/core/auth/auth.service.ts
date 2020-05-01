@@ -8,7 +8,6 @@ import { CredentialsService } from './credentials.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private defaultCredentials: ServerCredentials = {server: 'https://', token: '' }
   private loginsSource$ = new BehaviorSubject<ServerCredentials>(new ServerCredentials());
   logins$ = this.loginsSource$.asObservable();
   private get server(): string {
@@ -19,24 +18,36 @@ export class AuthService {
     this.init();
   }
 
-  private init(): void {
-    this.loginsSource$.next(this.credService.getCredentials());
-  }
-
-  isLoggedIn(): Promise<any> {
+  tryCredentials(credentials: ServerCredentials): Promise<any> {
+    credentials = this.trimCredentialValues(credentials);
+    this.setAuth(credentials);
     const url = `${this.server}/app/rest/latest/server`;
     return this.http.get(url).toPromise();
+  }
+
+  checkLoggedIn(): Promise<any> {
+    return this.tryCredentials(this.loginsSource$.value);
   }
 
   clearAuthentication(): void {
     this.credService.clearCredentials();
     this.loginsSource$.next(this.credService.getCredentials());
-   }
+  }
 
+  trimCredentialValues(credentials: ServerCredentials): ServerCredentials {
+    const {server, token} = credentials;
+    return {
+      server: server.trim(),
+      token: token.trim()
+    }
+  }
 
-  setAuth(credentials: ServerCredentials): Promise<any> {
-    this.credService.setCredentials(credentials);
+  private init(): void {
+    this.loginsSource$.next(this.credService.getCredentials());
+  }
+
+  private setAuth(credentials: ServerCredentials): void {
+    this.credService.saveCredentials(credentials);
     this.loginsSource$.next(credentials);
-    return this.isLoggedIn();
   }
 }
