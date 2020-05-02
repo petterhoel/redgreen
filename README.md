@@ -1,4 +1,4 @@
-# TeamCity buildscreen
+# [RedGreen](https://redgreen.app) is a buildscreen for TeamCity servers
 This is a work in progress, it is **_not considered stable_** yet. The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines.
 
 ## First: Notes on security
@@ -14,14 +14,14 @@ This version uses token-based authentication. Supported by Team City versions 20
 - [x] Error tracking using [sentry ](https://sentry.io/) with their standard sensitive data scrubbing.
 
 ## Todo
-- [ ] Error visualization
-    - Login
-    - Endpoint dosent exist
-    - Is not a TC server
-    - CORS
-- [ ] PWAify
-    - Installable (manifest, icons etc)
-    - Cache static assets
+### Error visualization    
+- [ ] Endpoint dosent exist
+- [ ] Is not a TC server
+- [x] Login
+- [x] CORS
+### PWAify
+- [ ] Installable (manifest, icons etc)
+- [ ] Cache static assets
 
 ## Nice to have
 - [ ] Running builds indicator.
