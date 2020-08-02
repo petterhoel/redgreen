@@ -20,6 +20,12 @@ h2 {
   align-items: center;
   justify-content: space-between;
 }
+
+label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 span {
   margin-right: 6px;
 }
