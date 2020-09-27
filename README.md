@@ -25,7 +25,7 @@ We use token-based authentication this means you'll need your Team City to be 20
 
 ## Nice to have
 - [ ] Running builds indicator.
-- [ ] Multiple server support (remember by localhost and easy to swap).
+- [ ] Multiple server support (remember by localstorage/localdb and easy to swap).
 
 ## What the Config?
 - `sentry.dsn`: is a sentry spesific url used to post errors to sentry.io. Defaults to Petter's sentry setup.
@@ -63,7 +63,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/<ProjectName>` directory. Use the `--prod` flag for a production build.
 
 ## CI/CD [![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/redgreen/deploys)
-Changes merged to master will go live with the help of [netlify](https://netlify.com)
+Changes merged to `main` will go live with the help of [netlify](https://netlify.com) ☺️
 
 ## Wanna run docker
 1. Build with `docker build .`.
