@@ -87,6 +87,10 @@ button {
   min-height: 30px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 button.reset {
   background-color: transparent;
   border: none;
@@ -95,6 +99,17 @@ button.reset {
   text-decoration-skip-ink: auto;
   text-decoration-color: var(--success);
   text-decoration-line: underline;
+}
+
+button.stripped {
+  background: none;
+  border: none;
+  font-size: .8rem;
+  color: var(--app-white);
+  padding: 0 2px;
+}
+button.stripped {
+  margin-left: .8em;
 }
 
 ul {
