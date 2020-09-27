@@ -1,6 +1,10 @@
-<nav>
-  <h1 [routerLink]="['/']">red || green</h1>
-  <ul>
+<nav *ngIf="menuState$ | async as menuVisibility" [ngStyle]="{
+        'flex-direction' : menuVisibility.layoutDirection}">
+  <a [routerLink]="['/']"> <h1>red || green</h1></a>
+
+  <ul *ngIf="menuVisibility.menuVisible"
+      [ngStyle]="{
+        'flex-direction' : menuVisibility.layoutDirection}">
     <li>
       <a [routerLink]="['/dashboard']"
         routerLinkActive="router-link-active">dashboard
@@ -26,4 +30,6 @@
       </a>
     </li>
   </ul>
+  <button (click)="toggleVisiblility()" *ngIf="menuVisibility.layoutDirection === 'column'">{{ menuVisibility.layoutDirection === 'column' && menuVisibility.menuVisible ? '✕' : '☰'}}</button>
 </nav>
+
