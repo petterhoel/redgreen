@@ -12,18 +12,15 @@ h2 {
   grid-area: builds;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-gap: 6px;
+  grid-gap: 0px;
   grid-column-gap: 30px;
 }
 
 .item {
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.item:hover {
-  background: rgba(255, 255, 255, 10%);
 }
 
 .item label{

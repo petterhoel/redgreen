@@ -82,8 +82,15 @@ export class BuildStoreService implements OnDestroy {
     this.updtateHiddenbuilds(hidden);
   }
 
-  sort(a: BuildInfo, b: BuildInfo) { return a.id.localeCompare(b.id); }
+  showAll(): void {
+    this.updtateHiddenbuilds([])
+  }
 
+  hideAll(): void {
+    this.updtateHiddenbuilds(this.builds$.getValue().map(build => build.id));
+  }
+
+  sort(a: BuildInfo, b: BuildInfo) { return a.id.localeCompare(b.id); }
 
   dateparser(d: string): Date {
     // tslint:disable:radix

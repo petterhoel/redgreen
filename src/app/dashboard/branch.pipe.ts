@@ -10,8 +10,7 @@ export class BranchPipe implements PipeTransform {
       return 'default branch';
     }
     const position = value.lastIndexOf('/');
-    const displayName = value.slice(position + 1, value.length);
-    return displayName;
+    return value.slice(position + 1, value.length);
   }
 
 }

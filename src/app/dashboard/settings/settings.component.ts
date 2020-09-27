@@ -29,6 +29,14 @@ export class SettingsComponent {
     this.buildStore.toggleBuildVisibility(id);
   }
 
+  showAll(): void {
+    this.buildStore.showAll();
+  }
+
+  hideAll(): void {
+    this.buildStore.hideAll();
+  }
+
 }
 class BuildWithVisibility {
   id: string = '';

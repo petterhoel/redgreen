@@ -1,5 +1,7 @@
 <section class="info">
-  <h2>Show / hide</h2> <button class="stripped">all</button> <button class="stripped">none</button>
+  <h2>Builds to display</h2>
+  <button class="stripped" (click)="showAll()">all</button>
+  <button (click)="hideAll()" class="stripped">none</button>
 </section>
 
 <section class="builds" *ngIf="buildsWithVisibility$ | async as builds">
