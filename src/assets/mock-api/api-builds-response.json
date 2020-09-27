@@ -1,0 +1,1244 @@
+{
+  "buildType": [
+    {
+      "id": "OwlWatch:Yas",
+      "name": "OwlWatch",
+      "builds": {
+        "build": [
+          {
+            "number": "2.0.8-ci.2",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 10258,
+                  "version": "1045c5c3e2bc1a0216c33618347630d642ac58de",
+                  "username": "Hypertext Assassins",
+                  "date": "20200217T084536+0100",
+                  "comment": "Merged PR 745: Oppgraderer til angular 9\n\nBumper også tredjepart libs.\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Diverse_TechMeetup",
+      "name": "Progress Tech Meetup",
+      "builds": {
+        "build": []
+      }
+    },
+    {
+      "id": "Diverse_BuildMonitor",
+      "name": "BuildMonitor",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0-ci.79",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 8037,
+                  "version": "97bc36d1ba972ba43caa7a83adcf5ee940603401",
+                  "username": "Callback Cats",
+                  "date": "20190915T205149+0200",
+                  "comment": "Adds strinct typescript compilation, bump package versions, removes bad build auto expand behaviour (#8)\n\n* makes ts compiler strict and resolves resulting compile errors. Removes bad build auto expand feature.\r\n\r\n* Bumps versions. Adds OnPush change detection\r\n"
+                }
+              ]
+            },
+            "agent": {
+              "name": "ip_172.17.0.3-1",
+              "typeId": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Diverse_MonitorVersioning",
+      "name": "BuildMonitor_Versioning",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0-ci.101",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 12680,
+                  "version": "1df92e639b3d892566e39e35016ae88c17c29468",
+                  "username": "Runtime Terror",
+                  "date": "20200802T180742+0200",
+                  "comment": "Bumps angular to v10 and checkboxfix (#25)\n\n* adds postinstall script\r\n\r\n* ng 10 and fixes settings checkbox issue\r\n\r\nCo-authored-by: root <root@pvPetterX1.ProVentus.local>"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Diverse_lottery",
+      "name": "lottery",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+28",
+            "status": "FAILURE",
+            "branchName": "main",
+            "statusText": "Unable to create or deploy release. Please check the build log for details on the error. (new)",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "SuitProtection",
+      "name": "Rentals",
+      "builds": {
+        "build": [
+          {
+            "number": "2.9.1-ci.23",
+            "status": "SUCCESS",
+            "branchName": "main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 12211,
+                  "version": "a4cedd1e86b475d5f67a7c18bbe2f937211acfbb",
+                  "username": "user42",
+                  "date": "20200611T153126+0200",
+                  "comment": "Merged PR 877: Final commit, ready for tagging"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "JubaJuba_AzureBackend",
+      "name": "Azure Backend",
+      "builds": {
+        "build": [
+          {
+            "number": "1.27.0",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 1705,
+                  "version": "59cd051d7615e0d8ab73c085362582e374a76acb",
+                  "username": "user143",
+                  "date": "20180226T143110+0100",
+                  "comment": "This is supposed to crash"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "JubaJuba_FrontendWeb",
+      "name": "FrontendWeb",
+      "builds": {
+        "build": [
+          {
+            "number": "0.12",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 1706,
+                  "version": "3c2f058d9e3f2bed03af131eb2f59983420371a5",
+                  "username": "user1user1user1",
+                  "date": "20180226T143159+0100",
+                  "comment": "Fix hard-coded [object Object] string (thanks!)\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "JubaJuba_ProgressBackend",
+      "name": "OpenEdgeREST",
+      "builds": {
+        "build": [
+          {
+            "number": "1.53.0",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2116,
+                  "version": "27831",
+                  "username": "wfefwfewfwefefwwfewedwsx",
+                  "date": "20180424T111137+0200",
+                  "comment": "changes"
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "JubaJuba_ProgressWEB",
+      "name": "ProgressWEB",
+      "builds": {
+        "build": [
+          {
+            "number": "1.18.0",
+            "status": "FAILURE",
+            "statusText": "Exit code 1 (new)",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2116,
+                  "version": "27831",
+                  "username": "whaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "date": "20180424T111137+0200",
+                  "comment": "Re-adding ConfigurationPostProcessorTests after its brief removal in r814. @Ignore-ing the testCglibClassesAreLoadedJustInTimeForEnhancement() method as it turns out this was one of the culprits in the recent build breakage. The classloader hacking causes subtle downstream effects, breaking unrelated tests. The test method is still useful, but should only be run on a manual basis to ensure CGLIB is not prematurely classloaded, and should not be run as part of the automated build."
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Dbs_Dbs",
+      "name": "Dbs",
+      "builds": {
+        "build": [
+          {
+            "number": "19.0.3072",
+            "status": "FAILURE",
+            "statusText": "Unable to create or deploy release. Please check the build log for details on the error. (new)",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Dbs_DbsProgress",
+      "name": "Dbs_Progress_32bit",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+12227",
+            "status": "FAILURE",
+            "branchName": "refs/heads/main",
+            "statusText": "Exit code 1 (Step: Compile (Ant))",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 9943,
+                  "version": "12dab28343de70e47f225ab80b83d7e20a6b3b69",
+                  "username": "dddfdfdfddfdfdfdfddfdf",
+                  "date": "20200127T151630+0100",
+                  "comment": "\n\nTask #4259 A full commitment's what I'm thinking of"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Dbs_DbsProgress64bit",
+      "name": "Dbs_Progress_64bit",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+12227",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 9943,
+                  "version": "12dab28343de70e47f225ab80b83d7e20a6b3b69",
+                  "username": "curdfdfdfdfdffdfdfdft",
+                  "date": "20200127T151630+0100",
+                  "comment": "\n\nI CAN HAZ PYTHON, I CAN HAZ INDENTS"
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Dbs_DbsWeb",
+      "name": "DbsWeb",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+12232",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 13260,
+                  "version": "654a9398ed0dd80ac7d843042ed0110bdab7e858",
+                  "username": "lefdfkljdfldejldedejfel",
+                  "date": "20200910T154026+0200",
+                  "comment": "Merge remote-tracking branch 'origin/main'\n\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Dbs_DbsWebV2Build",
+      "name": "DbsWeb_V2Build",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+2",
+            "status": "FAILURE",
+            "statusText": "Exit code 321 (Step: Creater (Command Line))",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 9759,
+                  "version": "4ebf477b349c2faa4e7cb01759061394eed44920",
+                  "username": "kurt kubein",
+                  "date": "20200109T135142+0100",
+                  "comment": "Deleted README.md\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_Floating",
+      "name": "Floating",
+      "builds": {
+        "build": [
+          {
+            "number": "2.1.3",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 13169,
+                  "version": "338401fe29815328e96ac623cf46212bf9b8f440",
+                  "username": "jabajaba",
+                  "date": "20200904T140008+0200",
+                  "comment": "Trust me, I'm an engineer!... What the f*ck did just happened here?"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_Backoffice",
+      "name": "Backoffice_11.6",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0-ci.12353",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 13411,
+                  "version": "f7857b43e31762da2fd07482d5466968031b52da",
+                  "username": "varvarvar",
+                  "date": "20200925T141513+0200",
+                  "comment": "Ref #4660 Committing fixes in the dark, seriously, who killed my power!?"
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_Docs",
+      "name": "Docs",
+      "builds": {
+        "build": [
+          {
+            "number": "0.2.3-ci.15",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 9852,
+                  "version": "ebd84545c2ce1648c0ab3feabf7aef760272dd72",
+                  "username": "yeyeyeyeyeyeyeyeyeyey",
+                  "date": "20200116T085722+0100",
+                  "comment": "needs more cow bell 🐮 🔔\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_MinSide",
+      "name": "MinSide",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+1493",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 6609,
+                  "version": "29892",
+                  "username": "vande gurunam",
+                  "date": "20190607T201249+0200",
+                  "comment": "namaste"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_MetsysRelease",
+      "name": "MetsysRelease",
+      "builds": {
+        "build": [
+          {
+            "number": "1.43",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_MetsysStaging",
+      "name": "MetsysStaging",
+      "builds": {
+        "build": [
+          {
+            "number": "66",
+            "status": "FAILURE",
+            "statusText": "Exit code 1",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 1011,
+                  "version": "26797",
+                  "username": "untitled",
+                  "date": "20171122T083531+0100",
+                  "comment": "remove certain things and added stuff "
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_MetsysWeb",
+      "name": "MetsysWeb",
+      "builds": {
+        "build": [
+          {
+            "number": "56",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 6685,
+                  "version": "29893",
+                  "username": "yes@no.no",
+                  "date": "20190612T204111+0200",
+                  "comment": "Blaming regex."
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_MetsysWebProxy",
+      "name": "MetsysWebProxy",
+      "builds": {
+        "build": [
+          {
+            "number": "0.2.17",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 7847,
+                  "version": "38b6b455d0b8f90d3f4757d52bcd91fed3716aac",
+                  "username": "NULL",
+                  "date": "20190906T122046+0200",
+                  "comment": "Don’t even try to refactor it.\n\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 5,
+              "name": "ip_172.17.0.3",
+              "typeId": 10,
+              "href": "/app/rest/latest/agents/id:5",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=5&agentTypeId=10&realAgentName=ip_172.17.0.3"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_OsImageResizer",
+      "name": "OsImageResizer",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+0",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_OsMail",
+      "name": "OsMail",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+2",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_OsMail2",
+      "name": "OsMail2",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+5",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 4978,
+                  "version": "c8a9de527ad30ea819393e403722b1fcc7739605",
+                  "username": "mr contributer",
+                  "date": "20190321T144832+0100",
+                  "comment": "Merged PR 226: Build error\n\nBuild error\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_OsMail3",
+      "name": "OsMail3",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+8",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_OsMerge",
+      "name": "OsMerge",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+23",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 9016,
+                  "version": "6e7db9b58722d9dada398df63022878fbfd2b41b",
+                  "username": "dadada",
+                  "date": "20191107T132412+0100",
+                  "comment": "Chenni broke the regex, lame 🤪\n\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_ReportService",
+      "name": "ReportService",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+9",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_Tools",
+      "name": "Tools",
+      "builds": {
+        "build": [
+          {
+            "number": "31",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2238,
+                  "version": "27947",
+                  "username": "hahahahahahahaha",
+                  "date": "20180507T150157+0200",
+                  "comment": "lets drink beer"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_Webservices",
+      "name": "Webservices",
+      "builds": {
+        "build": [
+          {
+            "number": "19",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2235,
+                  "version": "27944",
+                  "username": "lsdj feldksjf dlskf gdlkjf clsdkfj ",
+                  "date": "20180507T144758+0200",
+                  "comment": "copy and paste is not a design pattern"
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Metsys_ZipFtpTransfer",
+      "name": "ZipFtpTransfer",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+2",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Produkt_Problem",
+      "name": "Problem",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+913",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 5306,
+                  "version": "70d60dc57e192c404cfb6ac992ba7d59a58e2530",
+                  "username": "joda neida ok",
+                  "date": "20190403T160501+0200",
+                  "comment": "Merged PR 262: Removed test case since code didn't pass QA\n\nRelated work items: #2697, #2746\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Produkt_ProblemApi",
+      "name": "ProblemApi",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0+671",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 5307,
+                  "version": "8dbeafd77e91bd08ad2be2a87d6e097c7c5f0c69",
+                  "username": "nn",
+                  "date": "20190403T160337+0200",
+                  "comment": "Merged PR 261: TODO: Fix later\n\n 😥 \n\nRelated work items: #2697, #2746\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Produkt_BookStore",
+      "name": "BookStore",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.0-ci.725",
+            "status": "SUCCESS",
+            "branchName": "refs/heads/main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 7536,
+                  "version": "c8ce5226b2b9c8b1fa1b116b9ede7bd63dd2b95c",
+                  "username": "danny og fasanjakten",
+                  "date": "20190819T095718+0200",
+                  "comment": "yet another quality commit\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Produkt_ServiceShopper",
+      "name": "ServiceShopper",
+      "builds": {
+        "build": [
+          {
+            "number": "4.0.0-ci.149",
+            "status": "SUCCESS",
+            "branchName": "main",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 13394,
+                  "version": "a1b1524f78c4bac3e4692a962c4e19d7b0c06222",
+                  "username": "petter",
+                  "date": "20200921T085133+0200",
+                  "comment": "If it's stupid and it works, it ain't stupid\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Produkt_ServiceShopper_v3_backup",
+      "name": "ServiceShopper v3 Backup",
+      "builds": {
+        "build": [
+          {
+            "number": "4.0.0-ci.127",
+            "status": "FAILURE",
+            "branchName": "main",
+            "statusText": "Unable to create or deploy release. Please check the build log for details on the error.",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 13250,
+                  "version": "e490e7816e0635ec667775ab4bfa6e0eaa8c824d",
+                  "username": "petter",
+                  "date": "20200910T122159+0200",
+                  "comment": "Merged PR 944: Never gonna let you down \n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Test_Test",
+      "name": "Test",
+      "builds": {
+        "build": [
+          {
+            "number": "4",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Lis_LaLaLa",
+      "name": "LaLaLa",
+      "builds": {
+        "build": [
+          {
+            "number": "1.50.251",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2108,
+                  "version": "27823",
+                  "username": "jojojojojojojojojo",
+                  "date": "20180423T222827+0200",
+                  "comment": "Never before had a small typo like this one caused so much damage."
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Konteiner_DockerPack",
+      "name": "DockerPack",
+      "builds": {
+        "build": [
+          {
+            "number": "0.48.38",
+            "status": "FAILURE",
+            "statusText": "Get https://registry-1.docker.io/v2/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers); exit code 1",
+            "agent": {
+              "id": 4,
+              "name": "TeamCityAgent42",
+              "typeId": 5,
+              "href": "/app/rest/latest/agents/id:4",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=4&agentTypeId=5&realAgentName=TeamCityAgent42"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "Konteiner_WebPrototype",
+      "name": "WebPrototype",
+      "builds": {
+        "build": [
+          {
+            "number": "0.48",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2761,
+                  "version": "a1b1d399272c6b45a5ee6e7c3e9e44a58e7b0fc0",
+                  "username": "wilco ftw",
+                  "date": "20180731T100607+0200",
+                  "comment": "Updated README.md\n"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "TimesAreAChanging_Backend",
+      "name": "Backend",
+      "builds": {
+        "build": [
+          {
+            "number": "72",
+            "status": "FAILURE",
+            "statusText": "Exit code 1",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2239,
+                  "version": "27948",
+                  "username": "suspektius",
+                  "date": "20180507T153252+0200",
+                  "comment": "SUSPEKTE INNSJEKKING KAN FOREKOMME. Oppdatert grunnet oppgradering av TFS Online"
+                }
+              ]
+            },
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "TimesAreAChanging_Frontend",
+      "name": "Frontend",
+      "builds": {
+        "build": [
+          {
+            "number": "41",
+            "status": "FAILURE",
+            "statusText": "Compilation error: ProAssemblys\\ProAssemblys.vbproj",
+            "lastChanges": {
+              "change": [
+                {
+                  "id": 2239,
+                  "version": "27948",
+                  "username": "suspetctius also",
+                  "date": "20180507T153252+0200",
+                  "comment": "SUSPEKTE INNSJEKKING KAN FOREKOMME. Oppdatert grunnet oppgradering av TFS Online"
+                }
+              ]
+            },
+            "agent": {
+              "id": 3,
+              "name": "TeamCityAgent2",
+              "typeId": 3,
+              "href": "/app/rest/latest/agents/id:3",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=3&agentTypeId=3&realAgentName=TeamCityAgent2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "TimesAreAChanging_TimesAreAChanging",
+      "name": "TimesAreAChanging",
+      "builds": {
+        "build": [
+          {
+            "number": "0.1.22",
+            "status": "SUCCESS",
+            "statusText": "Success",
+            "agent": {
+              "id": 2,
+              "name": "TeamCityAgentName",
+              "typeId": 2,
+              "href": "/app/rest/latest/agents/id:2",
+              "webUrl": "https://teamcity.server.app/agentDetails.html?id=2&agentTypeId=2&realAgentName=TeamCityAgentName"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

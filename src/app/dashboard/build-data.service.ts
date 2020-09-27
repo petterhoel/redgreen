@@ -9,6 +9,7 @@ import { CredentialsService } from '../core/auth/credentials.service';
   providedIn: 'root'
 })
 export class BuildDataService extends BaseDataService {
+  private readonly mockApiPath = '/assets/mock-api/api-builds-response.json';
   private readonly rootProject = '_Root';
   private readonly prefixUrl = 'app/rest/latest/';
   private readonly locator = `locator=affectedProject:(id:${this.rootProject})`;
@@ -21,7 +22,7 @@ export class BuildDataService extends BaseDataService {
   }
 
   getLatestBuilds(): Observable<BuildTypes> {
-    const url = `${this.serverUrl}/${this.prefixUrl}buildTypes?${this.query}`;
+    const url = this.mockApiPath || `${this.serverUrl}/${this.prefixUrl}buildTypes?${this.query}`;
     return this.http.get<BuildTypes>(url);
   }
 }
