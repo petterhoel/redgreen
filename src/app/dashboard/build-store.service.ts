@@ -92,7 +92,10 @@ export class BuildStoreService implements OnDestroy {
 
   sort(a: BuildInfo, b: BuildInfo) { return a.id.localeCompare(b.id); }
 
-  dateparser(d: string): Date {
+  dateparser(d: string): Date | undefined {
+    if (!d) {
+      return undefined;
+    }
     // tslint:disable:radix
     const year = parseInt(d.substring(0, 4));
     const month = parseInt(d.substring(4, 6)) - 1
@@ -115,7 +118,6 @@ export class BuildStoreService implements OnDestroy {
       branchName
     } = build;
     const { username, date, comment, version: commit } = change;
-
     return {
       id,
       name,

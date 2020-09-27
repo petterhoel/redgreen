@@ -20,9 +20,9 @@ import { DateFnsModule } from 'ngx-date-fns';
   imports: [
     CommonModule,
     RouterModule,
-    DateFnsModule.forRoot(),
     FormsModule,
-  SharedModule,
+    SharedModule,
+    DateFnsModule.forRoot()
   ],
   exports: [
     LatestBuildsComponent

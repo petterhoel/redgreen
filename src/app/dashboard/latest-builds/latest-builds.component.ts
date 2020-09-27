@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { BuildStoreService } from '../build-store.service';
 import { tap } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs';
+import { BuildUpdateService } from '../../core/build-update.service';
 
 @Component({
   selector: 'app-latest-builds',
@@ -9,10 +9,19 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./latest-builds.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LatestBuildsComponent {
+export class LatestBuildsComponent implements OnDestroy{
   builds$ = this.buildData
     .filteredBuilds$
-    .pipe(tap(() => this.updated$.next(new Date())));
-  updated$ = new BehaviorSubject<Date>(new Date(0));
-  constructor(private buildData: BuildStoreService) { }
+    .pipe(tap(() => this.runUpdated()));
+
+  constructor(private buildData: BuildStoreService,
+              private updatedService: BuildUpdateService) { }
+
+  runUpdated(): void {
+    this.updatedService.updateText();
+  }
+
+  ngOnDestroy(): void {
+    this.updatedService.clear()
+  }
 }

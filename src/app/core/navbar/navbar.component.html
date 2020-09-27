@@ -1,5 +1,5 @@
-<nav *ngIf="menuState$ | async as menuVisibility" [ngStyle]="{
-        'flex-direction' : menuVisibility.layoutDirection}">
+<nav *ngIf="menuState$ | async as menuVisibility"
+     [ngClass]="{'large' : menuVisibility.layoutDirection === 'row'}">
   <a [routerLink]="['/']"> <h1>red || green</h1></a>
 
   <ul *ngIf="menuVisibility.menuVisible"
