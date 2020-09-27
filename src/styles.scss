@@ -49,8 +49,6 @@ input {
   color: var(--app-white);
   padding: var(--std-padding);
   font-size: 16px;
-  flex-grow: 2;
-  min-width: 125px;
   border: 1px solid var(--subtle2);
   border-bottom: 2px solid var(--subtle2);
   border-radius: var(--border-radius);
@@ -89,6 +87,10 @@ button {
   min-height: 30px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 button.reset {
   background-color: transparent;
   border: none;
@@ -97,6 +99,17 @@ button.reset {
   text-decoration-skip-ink: auto;
   text-decoration-color: var(--success);
   text-decoration-line: underline;
+}
+
+button.stripped {
+  background: none;
+  border: none;
+  font-size: .8rem;
+  color: var(--app-white);
+  padding: 0 2px;
+}
+button.stripped {
+  margin-left: .8em;
 }
 
 ul {
@@ -116,19 +129,20 @@ ul.dashed li:before {
     Which means IE11 and Opera Mini will get the old browser-styled checkbox.
     Which works just fine. Old browsers can get old looking things. */
      input[type="checkbox"] {
-      /*  Remove the default styling.
+       /*  Remove the default styling.
           `-webkit-appearance` is not an official CSS property
         & likely never will be. But it's also in 95% of browsers,
         non-webkit included, yes, as a `-webkit` property.
         Firefox, Edge, Chrome, Opera all implemented `-webkit-appearance`.
         Plus it *will* stick around. Browsers can't remove it.
         So use it like this...                                 */
-      -webkit-appearance: none;
-      /* Style the box. */
-      width: 1.6rem;
-      height: 1.6rem;
-      border: 1px solid var(--subtle);
-      cursor: pointer;
+       -webkit-appearance: none;
+       margin: 0;
+       /* Style the box. */
+       width: 1.6rem;
+       height: 1.6rem;
+       border: 1px solid var(--subtle);
+       cursor: pointer;
     }
     input[type="checkbox"]:focus {
       /* Style the box when it's focused. */
@@ -159,3 +173,9 @@ ul.dashed li:before {
       transform: rotate(-45deg);
     }
   }
+
+app-settings .item:hover,
+app-build-info .wrapper:hover {
+  background: lighten(#1f2534, 10%);
+  border-radius: 8px;
+}

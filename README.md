@@ -2,7 +2,7 @@
 The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines. This is a work in progress, we are beta-ish stable ☺️. 
 
 ## First: Notes on security
-We use token-based authentication this means you'll need your Team City to be 2019.1 or newer.
+We use TeamCity's token-based authentication this means you'll need your Team City to be 2019.1 or newer.
 - Set up a read only user in TeamCity for this buildscreen.
 - Generate token for that user and use to sign into build screen. Token will be stored in browser localstorage.
 - If your build data contains or is considered sensitive information, don't have a build screen.
@@ -25,7 +25,7 @@ We use token-based authentication this means you'll need your Team City to be 20
 
 ## Nice to have
 - [ ] Running builds indicator.
-- [ ] Multiple server support (remember by localhost and easy to swap).
+- [ ] Multiple server support (remember by localstorage/localdb and easy to swap).
 
 ## What the Config?
 - `sentry.dsn`: is a sentry spesific url used to post errors to sentry.io. Defaults to Petter's sentry setup.
@@ -63,7 +63,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/<ProjectName>` directory. Use the `--prod` flag for a production build.
 
 ## CI/CD [![Netlify Status](https://api.netlify.com/api/v1/badges/ad6c1e2f-621d-4c6d-b9e8-77ee005f8294/deploy-status)](https://app.netlify.com/sites/redgreen/deploys)
-Changes merged to master will go live with the help of [netlify](https://netlify.com)
+Changes merged to `main` will go live with the help of [netlify](https://netlify.com) ☺️
 
 ## Wanna run docker
 1. Build with `docker build .`.
