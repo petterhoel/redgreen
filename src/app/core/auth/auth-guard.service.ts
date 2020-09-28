@@ -13,8 +13,7 @@ export class AuthGuardService implements CanActivate {
       await this.auth.checkLoggedIn()
       return true;
     } catch (error) {
-      console.log('ERRRRRRR')
-      await this.router.navigate(['server']);
+      await this.router.navigate(['sign-in']);
       return false;
     }
   }

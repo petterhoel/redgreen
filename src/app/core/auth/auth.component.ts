@@ -54,7 +54,6 @@ export class AuthComponent implements OnInit, OnDestroy {
       await this.router.navigate(['dashboard'])
     } catch (responseError) {
       const { status } = responseError;
-      console.log(responseError)
       if (status === 0) {
         this.maybeCorsError = true;
       }
