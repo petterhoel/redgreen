@@ -8,7 +8,7 @@ import { AboutComponent } from './core/about/about.component';
 
 const routes: Routes = [
   {
-    path: `server`,
+    path: `sign-in`,
     component: AuthComponent
   },
   {
