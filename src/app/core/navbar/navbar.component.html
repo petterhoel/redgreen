@@ -4,6 +4,7 @@
        [ngClass]="{'large' : menuVisibility.layoutDirection === 'row'}">
     <h1 [routerLink]="['/']" style="cursor: pointer">red || green</h1>
     <ul *ngIf="menuVisibility.menuVisible"
+        (click)="toggleVisiblility()"
         [ngStyle]="{
           'flex-direction' : menuVisibility.layoutDirection}">
       <li>
@@ -30,7 +31,7 @@
         <a href="https://github.com/petterhoel/redgreen"
            target="_blank"
            rel="noopener"
-           title="Read about the project and get the code at github"
+           title="Fork me on GitHub"
            routerLinkActive="router-link-active">
           <img width="20px" height="20px" src="/assets/github-32px.png" alt="github logo">
         </a>
