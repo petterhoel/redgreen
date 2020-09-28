@@ -15,6 +15,7 @@ import { StatusBarComponent } from './status-bar/status-bar.component';
 import { DateFnsModule } from 'ngx-date-fns';
 import { BuildUpdateService } from './build-update.service';
 import { SharedModule } from '../shared/shared.module';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SharedModule } from '../shared/shared.module';
     InfoBoxComponent,
     AutoFocusDirective,
     HintComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,

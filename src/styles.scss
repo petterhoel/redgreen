@@ -12,7 +12,7 @@ html, body, app-root {
 body {
   margin: 0;
   background-color: var(--backgroundColor);
-  color: var(--app-white);
+  color: aliceblue;
 }
 
 body,
@@ -33,9 +33,28 @@ h2,
 h3,
 h4,
 h5,
+h6
+{
+  font-weight: bold;
+  margin: 1em 0 .2em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
 h6,
 pre {
   font-family: var(--sans-serif)
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+p{
+  margin: 0;
 }
 
 .quote {
@@ -113,16 +132,11 @@ button.stripped {
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
+  list-style-position: outside;
+  padding: 1em;
+  margin: 0;
+  //list-style-type: '-';
 }
-
-ul.dashed li:before {
-  color: #00a5dd;
-  content: '\2014';
-  margin-right: 6px;
-}
-
 
 @supports(-webkit-appearance: none) {
   /* 	AKA, only do this if `-webkit-appearance: none` is supported.

@@ -24,18 +24,22 @@ h1 {
 }
 
 ul {
+  width: 100%;
   margin: 10px 0 0 0;
   padding: 0;
   display: flex;
+  align-items: end;
 }
 
 nav.large ul {
+  width: unset;
+  align-items: center;
   margin: 0 10px 0 0;
 }
 
 li {
   list-style: none;
-  margin: 10px 0 0;
+  margin: .6em 0;
 }
 
 nav.large li {
@@ -47,11 +51,15 @@ a{
   color: aliceblue;
 }
 
-a.router-link-active {
-  color: var(--failure);
+a.router-link-active,
+a:hover {
   font-style: italic;
   transition: color .2s ease-in;
   border-bottom: 1px solid var(--success);
+}
+
+a.router-link-active {
+  color: var(--failure);
 }
 
 button {
@@ -64,8 +72,3 @@ button {
   color: var(--app-white);
   font-size: 2em;
 }
-
-
-
-
-

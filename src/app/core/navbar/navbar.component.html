@@ -2,8 +2,7 @@
   <button (click)="toggleVisiblility()" *ngIf="menuVisibility.layoutDirection === 'column'">{{ menuVisibility.layoutDirection === 'column' && menuVisibility.menuVisible ? '✕' : '☰'}}</button>
   <nav
        [ngClass]="{'large' : menuVisibility.layoutDirection === 'row'}">
-    <a [routerLink]="['/']"> <h1>red || green</h1></a>
-
+    <h1 [routerLink]="['/']" style="cursor: pointer">red || green</h1>
     <ul *ngIf="menuVisibility.menuVisible"
         [ngStyle]="{
           'flex-direction' : menuVisibility.layoutDirection}">
@@ -22,11 +21,11 @@
           routerLinkActive="router-link-active">server
         </a>
       </li>
-     <!-- <li>
+     <li>
         <a [routerLink]="['/about']"
-           routerLinkActive="router-link-active">about
+           routerLinkActive="router-link-active">wut ?
         </a>
-      </li>-->
+      </li>
       <li>
         <a href="https://github.com/petterhoel/redgreen"
            target="_blank"

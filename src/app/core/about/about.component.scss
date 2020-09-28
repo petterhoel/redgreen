@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.575rem
+}
+
+article{
+  margin: 2em 0;
+  width: 600px;
+  max-width: 100%;
+}
+ul {
+  padding: .2em 1em;
+}
+
+ul, p {
+  margin: 0;
+}
+
+
+
