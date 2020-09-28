@@ -26,10 +26,8 @@
     <app-hint [class.hidden]="token.valid || token.untouched"> Please supply a vaild token.</app-hint>
     <button type="submit" [disabled]="form.invalid">Log in with token</button>
     <button (click)="clearCredentials();form.reset();serverInput.focus()" type="button" class="reset">Wipe credentials</button>
-    <app-info-box>
+    <app-info-box style="margin-top: 2em">
       Please use an account that is readonly and nonsensitive. Token is stored on the client.
-      <br><br>
-      We use sentry.io for error monitoring. Don't worry, sentry scrubs sensitve data 😇
     </app-info-box>
   </form>
 </section>

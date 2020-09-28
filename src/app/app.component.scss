@@ -1,25 +1,27 @@
 :host {
   display: grid;
+  min-height: 100vh;
   max-height: 100vh;
+  grid-template-rows: auto 1fr 1.5em;
   grid-template-areas:
     "navbar"
     "content"
+    "statusbar"
 }
-
-$navHeight: 48px;
 
 app-navbar{
   grid-area: navbar;
-  display: flex;
-  padding: 2em 1em;
-  height: $navHeight;
   background-color: var(--backgroundColor-lighter);
+}
+
+app-status-bar {
+  grid-area: statusbar;
+  overflow: hidden;
 }
 
 .router-outlet {
   grid-area: content;
+  height: 1fr;
   padding: 0 10px;
-  height: calc(100vh - (48px + 2em));
-  max-height: calc(100vh - (48px + 2em));
   overflow: auto;
 }

@@ -1,6 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { BuildInfo } from '../model/build-info';
-import { parseISO } from 'date-fns';
 
 const defaultBuild: BuildInfo = {
   branchName: '',
@@ -23,7 +22,6 @@ const defaultBuild: BuildInfo = {
 export class BuildInfoComponent {
   @Input() build: BuildInfo = defaultBuild;
   open = false;
-  parseISO = parseISO;
   toggleExpander(): void {
     this.open = !this.open;
   }

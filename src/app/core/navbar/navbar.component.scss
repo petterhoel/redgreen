@@ -1,14 +1,22 @@
-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+section  {
+  position: relative;
 }
-nav > * {
-  margin-right: 10px;
+
+nav {
+  padding: 1em;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100vw;
+}
+
+nav.large {
+  flex-direction: row;
+  align-items: end;
 }
 
 h1 {
-  margin: 0;
+  margin: 0 10px 0 0;
   font-family: var(--monospace);
   background: -webkit-linear-gradient(45deg, #f3538b, var(--failure));
   -webkit-background-clip: text;
@@ -16,15 +24,26 @@ h1 {
 }
 
 ul {
-  margin: 0;
-  padding: 4px 0 0 10px;
+  width: 100%;
+  margin: 10px 0 0 0;
+  padding: 0;
   display: flex;
-  flex-direction: row;
+  align-items: end;
+}
+
+nav.large ul {
+  width: unset;
+  align-items: center;
+  margin: 0 10px 0 0;
 }
 
 li {
   list-style: none;
-  margin-right: 10px;
+  margin: .6em 0;
+}
+
+nav.large li {
+  margin: 0 0 0 16px;
 }
 
 a{
@@ -32,14 +51,24 @@ a{
   color: aliceblue;
 }
 
-a.router-link-active {
-  color: var(--failure);
+a.router-link-active,
+a:hover {
   font-style: italic;
   transition: color .2s ease-in;
   border-bottom: 1px solid var(--success);
 }
 
+a.router-link-active {
+  color: var(--failure);
+}
 
-
-
-
+button {
+  position: absolute;
+  padding: 0;
+  top: .1em;
+  right: .5em;
+  background: none;
+  border: none;
+  color: var(--app-white);
+  font-size: 2em;
+}

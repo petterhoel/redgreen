@@ -1,0 +1,31 @@
+<article>
+  <h1>A Buildscreen for TeamCity servers</h1>
+  <p>RedGreen aims to provide a clear visualization of build statuses from TeamCity servers along with build meta information. This is a work in progress, we are beta-ish stable 👩‍💻</p>
+  <h2>Features</h2>
+  <ul>
+    <li>Lists latest completed builds on default branch with status symbol and meta infomation.</li>
+    <li>Fits narrow viewports and can sneak into busy info screens.</li>
+    <li>Filter which builds to display.</li>
+    <li>Error tracking using <a href="https://sentry.io" target="_blank" rel="noopener">Sentry.io</a>  with their standard sensitive data scrubbing 😇</li>
+    <li>Supports Team City 2019.1 or newer.</li>
+    <li>Free – MIT Licence 🥳</li>
+  </ul>
+  <p>
+    Are you looking for another feature? Feel free to make an issue on <a href="https://github.com/petterhoel/redgreen/issues" target="_blank" rel="noopener"> GitHub</a>. No promises though, this is a side-project. We encourage contributions, but let's discuss the changes upfront.
+  </p>
+  <h2>Notes on security</h2>
+  <p>
+    We use <a href="https://www.jetbrains.com/help/teamcity/rest-api.html#REST+Authentication" target="_blank" rel="noopener">TeamCity's token-based authentication</a>.
+  </p>
+  <ul>
+    <li>Set up a read only user in TeamCity for this buildscreen.</li>
+    <li>Generate token for that user and use to sign into build screen. Token will be stored in browser localstorage.</li>
+    <li>If your build data contains or is considered sensitive information, don't have a build screen.</li>
+  </ul>
+  <h2>Can't log in or get data? (CORS)</h2>
+  <p>
+  Your TeamCity server must accept requests from where ever you host the buildscreen. Please check <a href="https://www.jetbrains.com/help/teamcity/rest-api.html#CORS-support" target="_blank" rel="noopener">TeamCity docs on how to enable CORS</a>.
+  </p>
+</article>
+
+
