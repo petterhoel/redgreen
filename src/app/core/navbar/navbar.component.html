@@ -1,35 +1,41 @@
-<nav *ngIf="menuState$ | async as menuVisibility"
-     [ngClass]="{'large' : menuVisibility.layoutDirection === 'row'}">
-  <a [routerLink]="['/']"> <h1>red || green</h1></a>
-
-  <ul *ngIf="menuVisibility.menuVisible"
-      [ngStyle]="{
-        'flex-direction' : menuVisibility.layoutDirection}">
-    <li>
-      <a [routerLink]="['/dashboard']"
-        routerLinkActive="router-link-active">dashboard
-      </a>
-    </li>
-    <li>
-      <a [routerLink]="['/server']"
-        routerLinkActive="router-link-active">server
-      </a>
-    </li>
-    <li>
-      <a [routerLink]="['/settings']"
-        routerLinkActive="router-link-active">settings
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/petterhoel/redgreen"
-         target="_blank"
-         rel="noopener"
-         title="Read about the project and get the code at github"
-         routerLinkActive="router-link-active">
-        <img width="20px" height="20px" src="/assets/github-32px.png" alt="github logo">
-      </a>
-    </li>
-  </ul>
+<section *ngIf="menuState$ | async as menuVisibility">
   <button (click)="toggleVisiblility()" *ngIf="menuVisibility.layoutDirection === 'column'">{{ menuVisibility.layoutDirection === 'column' && menuVisibility.menuVisible ? '✕' : '☰'}}</button>
-</nav>
+  <nav
+       [ngClass]="{'large' : menuVisibility.layoutDirection === 'row'}">
+    <a [routerLink]="['/']"> <h1>red || green</h1></a>
 
+    <ul *ngIf="menuVisibility.menuVisible"
+        [ngStyle]="{
+          'flex-direction' : menuVisibility.layoutDirection}">
+      <li>
+        <a [routerLink]="['/dashboard']"
+          routerLinkActive="router-link-active">dashboard
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/settings']"
+           routerLinkActive="router-link-active">settings
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/server']"
+          routerLinkActive="router-link-active">server
+        </a>
+      </li>
+     <!-- <li>
+        <a [routerLink]="['/about']"
+           routerLinkActive="router-link-active">about
+        </a>
+      </li>-->
+      <li>
+        <a href="https://github.com/petterhoel/redgreen"
+           target="_blank"
+           rel="noopener"
+           title="Read about the project and get the code at github"
+           routerLinkActive="router-link-active">
+          <img width="20px" height="20px" src="/assets/github-32px.png" alt="github logo">
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>

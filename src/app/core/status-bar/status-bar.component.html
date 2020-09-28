@@ -4,4 +4,4 @@
     Builds are <span *ngIf="!updated">not </span>updated {{updated ? (updated | dfnsFormatDistanceToNow: {addSuffix:true}) : ''}}
   </span>
 </section>
-<section>Version: {{ configService?.config?.version?.commitRef }} </section>
+<section>Version: {{ configService?.config?.version?.commitRef | truncate:7}} </section>

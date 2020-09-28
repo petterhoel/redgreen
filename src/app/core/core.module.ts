@@ -14,6 +14,7 @@ import { HintComponent } from './hint/hint.component';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { DateFnsModule } from 'ngx-date-fns';
 import { BuildUpdateService } from './build-update.service';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BuildUpdateService } from './build-update.service';
     FormsModule,
     RouterModule,
     DateFnsModule.forRoot(),
+    SharedModule,
 
   ],
   providers: [

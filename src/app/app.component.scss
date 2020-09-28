@@ -2,7 +2,7 @@
   display: grid;
   min-height: 100vh;
   max-height: 100vh;
-  grid-template-rows: auto 1fr 22px;
+  grid-template-rows: auto 1fr 1.5em;
   grid-template-areas:
     "navbar"
     "content"

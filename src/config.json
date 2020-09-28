@@ -4,6 +4,6 @@
     "use": false
   },
   "version": {
-    "commitRef":"not prod"
+    "commitRef":"dev"
   }
 }

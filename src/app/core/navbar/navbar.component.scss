@@ -1,3 +1,7 @@
+section  {
+  position: relative;
+}
+
 nav {
   padding: 1em;
   display: flex;
@@ -51,6 +55,10 @@ a.router-link-active {
 }
 
 button {
+  position: absolute;
+  padding: 0;
+  top: .1em;
+  right: .5em;
   background: none;
   border: none;
   color: var(--app-white);
