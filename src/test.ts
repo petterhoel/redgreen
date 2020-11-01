@@ -18,3 +18,26 @@ getTestBed().initTestEnvironment(
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
+import 'jest-preset-angular';
+
+Object.defineProperty(window, 'CSS', {value: null});
+Object.defineProperty(window, 'getComputedStyle', {
+  value: () => {
+    return {
+      display: 'none',
+      appearance: ['-webkit-appearance']
+    };
+  }
+});
+
+Object.defineProperty(document, 'doctype', {
+  value: '<!DOCTYPE html>'
+});
+Object.defineProperty(document.body.style, 'transform', {
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true
+    };
+  }
+});
