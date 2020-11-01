@@ -8,12 +8,10 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { load } from 'src/config-loader';
 import { ConfigService } from './config.service';
 import { BuildScreenErrorHandler } from './build-screen-error-handler';
-import { LetsSeeComponent } from './lets-see/lets-see.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LetsSeeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
