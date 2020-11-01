@@ -1,5 +1,10 @@
 # [RedGreen](https://redgreen.app) is a buildscreen for TeamCity servers
 The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines. This is a work in progress, we are beta-ish stable ☺️. 
+ ![Twitter](./docs/images/fullscreen.png)
+ Clearly see which builds are failing. Expand items for more info.
+ 
+ ![Twitter](./docs/images/narrow.png)
+Fits in narrow screens and on your phone. 
 
 ## First: Notes on security
 We use TeamCity's token-based authentication this means you'll need your Team City to be 2019.1 or newer.
