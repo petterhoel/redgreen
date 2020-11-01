@@ -59,6 +59,9 @@ Run `ng serve` for a dev server. Navigate to [localhost:4200](http://localhost:4
 ### Code scaffolding
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+### Test
+Run `npx run testNoWatch` for a single run. Run `npx run test` to keep te tests going. 
+
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/<ProjectName>` directory. Use the `--prod` flag for a production build.
 

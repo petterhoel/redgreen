@@ -7,7 +7,7 @@ export class TruncatePipe implements PipeTransform {
 
   transform(value: string, length: number = 0): string {
     if (!length) {
-      return value;
+      return '';
     }
     if (value.length <= length) {
       return value;

@@ -5,7 +5,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { StatusIconComponent } from './status-icon/status-icon.component';
 
 @NgModule({
-  declarations: [TruncatePipe, StatusIconComponent],
+  declarations: [TruncatePipe, StatusIconComponent ],
   imports: [
     CommonModule
   ],
