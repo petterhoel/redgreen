@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve --port 4200",
     "build": "ng build",
-    "test": "ng test",
-    "netlifybuild": "ng build --prod && node buildscript/write-config.js && sh buildscript/associate-sentry-release-and-commit.sh",
+    "test": "npx jest",
+    "netlifybuild": "npm run lint && npm t && npm run productionBuild",
+    "productionBuild": "ng build --prod && node buildscript/write-config.js && sh buildscript/associate-sentry-release-and-commit.sh",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "update": "ng update @angular/cli @angular/core"
@@ -52,6 +53,7 @@
     "jest": "^26.6.1",
     "jest-preset-angular": "^8.3.2",
     "protractor": "~7.0.0",
+    "ts-jest": "^26.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.3"
