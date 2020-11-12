@@ -1,5 +1,5 @@
 # [RedGreen](https://redgreen.app) is a buildscreen for TeamCity servers
-The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines. This is a work in progress, we are beta-ish stable ☺️. 
+The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines. This is a work in progress ☺️. 
  ![Twitter](./docs/images/fullscreen.png)
  Clearly see which builds are failing. Expand items for more info.
  
@@ -65,7 +65,8 @@ Run `ng serve` for a dev server. Navigate to [localhost:4200](http://localhost:4
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ### Test
-Run `npx run testNoWatch` for a single run. Run `npx run test` to keep te tests going. 
+We use jest for unit testing. So far very few tests 🙈
+Run `npm run testNoWatch` for a single run. Run `npm run test` to keep the tests going. 
 
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/<ProjectName>` directory. Use the `--prod` flag for a production build.
