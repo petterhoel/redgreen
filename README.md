@@ -9,8 +9,9 @@ Fits in narrow screens and on your phone.
 ## First: Notes on security
 We use TeamCity's token-based authentication this means you'll need your Team City to be 2019.1 or newer.
 - Set up a read only user in TeamCity for this buildscreen.
-- Generate token for that user and use to sign into build screen. Token will be stored in browser localstorage.
+- Generate token for that user and use to sign into build screen. Token will be stored in the browsers localstorage.
 - If your build data contains or is considered sensitive information, don't have a build screen.
+  - Be aware that the TeamCity api allows downloading artifacts. If your build produces artifacts containing user secrets, say in a config file of sorts, *secrets are exposed*. Consider moving secrets away from your build and have automation tools apply them deploy time.  
 
 ## Features
 - [x] List latest completed builds with meta infomation.
