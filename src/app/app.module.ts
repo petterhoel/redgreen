@@ -8,6 +8,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { load } from 'src/config-loader';
 import { ConfigService } from './config.service';
 import { BuildScreenErrorHandler } from './build-screen-error-handler';
+import * as Sentry from "@sentry/angular";
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,11 @@ import { BuildScreenErrorHandler } from './build-screen-error-handler';
     {
       provide: ErrorHandler,
       useClass: BuildScreenErrorHandler
-    }
+    },
+    {
+      provide: Sentry.TraceService,
+      deps: [Router],
+    },
   ],
   bootstrap: [AppComponent]
 })

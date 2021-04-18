@@ -9,7 +9,7 @@ import { CredentialsService } from '../core/auth/credentials.service';
   providedIn: 'root'
 })
 export class BuildDataService extends BaseDataService {
-  private readonly mockApiPath = ''; // '/assets/mock-api/api-builds-response.json';
+  private readonly mockApiPath = '/assets/mock-api/api-builds-response.json';
   private readonly rootProject = '_Root';
   private readonly prefixUrl = 'app/rest/latest/';
   private readonly locator = `locator=affectedProject:(id:${this.rootProject})`;
