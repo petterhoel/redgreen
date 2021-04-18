@@ -14,14 +14,14 @@ export function load(http: HttpClient, configService: ConfigService): (() => Pro
           const release = `buildscreen@${configFromFile.version.commitRef}`;
 
           Sentry.init(
-            { 
-              dsn, 
-              release, 
+            {
+              dsn,
+              release,
               integrations: [
                 new Integrations.BrowserTracing({
-                  tracingOrigins: ["localhost", "https://redgreen.app"],
+                  tracingOrigins: ['localhost', 'https://redgreen.app'],
                   routingInstrumentation: Sentry.routingInstrumentation,
-            
+
                 })
               ],
               tracesSampleRate: 1
