@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from './app/config.service';
-import * as Sentry from '@sentry/browser';
+import * as Sentry from '@sentry/angular';
+import { Integrations } from '@sentry/tracing';
 
 export function load(http: HttpClient, configService: ConfigService): (() => Promise<string>) {
   return (): Promise<string> => {
@@ -11,7 +12,20 @@ export function load(http: HttpClient, configService: ConfigService): (() => Pro
         if (configFromFile.sentry.use) {
           const dsn = configFromFile.sentry.dsn;
           const release = `buildscreen@${configFromFile.version.commitRef}`;
-          Sentry.init({ dsn, release });
+
+          Sentry.init(
+            {
+              dsn,
+              release,
+              integrations: [
+                new Integrations.BrowserTracing({
+                  tracingOrigins: ['localhost', 'https://redgreen.app'],
+                  routingInstrumentation: Sentry.routingInstrumentation,
+
+                })
+              ],
+              tracesSampleRate: 1
+            });
         }
         resolve('Config read success');
       } catch (error) {
