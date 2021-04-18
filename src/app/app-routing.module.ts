@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: `dashboard`,
     component: LatestBuildsComponent,
-   // canActivate: [ AuthGuardService ]
+    canActivate: [ AuthGuardService ]
   },
   {
     path: `settings`,
