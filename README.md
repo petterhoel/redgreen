@@ -1,3 +1,7 @@
+# 👋 Sorry, this is no longer maintained 👋
+I do not have a TeamCity environment for this to support, making devlopment hard and personal value small. I am archiving this repo and retiring the redgreen.app domain for that reason. Please fork me if you wanna keep going 🤗
+
+
 # [RedGreen](https://redgreen.app) is a buildscreen for TeamCity servers
 The aim is to provide a clean visual interface for statuses of builds on TeamCity servers along with build meta information. This is a personal hobby effort. There are no deadlines. This is a work in progress ☺️. 
  ![Twitter](./docs/images/fullscreen.png)
